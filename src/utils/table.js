@@ -1,0 +1,80 @@
+import { startOfDay, endOfDay } from 'date-fns'
+import { isEqual, isNil } from 'lodash'
+
+export const convertFilterParams = (
+  filters = {},
+  columns = [],
+  isString = true,
+) => {
+  const filterData = Object.keys(filters).reduce((acc, cur) => {
+    if (
+      isNil(filters[cur]) ||
+      filters[cur] === '' ||
+      isEqual(filters[cur], []) ||
+      isEqual(filters[cur], {})
+    ) {
+      return acc
+    }
+
+    if (
+      columns.find((col) => col.field === cur && col.filterFormat === 'date')
+    ) {
+      let day1 = filters[cur]?.[0]
+      let day2 = filters[cur]?.[1]
+
+      if (!day1 && !day2) {
+        return acc
+      }
+
+      day1 = day1 || day2
+      day2 = day2 || day1
+
+      const startOfDay1 = startOfDay(new Date(day1))
+      const endOfDay2 = endOfDay(new Date(day2))
+      return [
+        ...acc,
+        {
+          column: cur,
+          text: `${startOfDay1?.toISOString()}|${endOfDay2?.toISOString()}`,
+        },
+      ]
+    }
+    if (
+      columns.find(
+        (col) => col.field === cur && col.filterFormat === 'multiple',
+      )
+    ) {
+      return [
+        ...acc,
+        {
+          column: cur,
+          text: (filters[cur] || []).toString(),
+        },
+      ]
+    }
+
+    return [
+      ...acc,
+      {
+        column: cur,
+        text: filters[cur].toString(),
+      },
+    ]
+  }, [])
+
+  return isString ? JSON.stringify(filterData) : filterData
+}
+
+export const convertSortParams = (sort) => {
+  const sortData =
+    sort && sort?.orderBy && sort?.order
+      ? [
+          {
+            column: sort?.orderBy,
+            order: sort?.order?.toUpperCase(),
+          },
+        ]
+      : []
+
+  return JSON.stringify(sortData)
+}

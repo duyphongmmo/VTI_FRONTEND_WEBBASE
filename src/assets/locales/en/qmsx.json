@@ -1,0 +1,151 @@
+{
+  "general": {},
+  "menu": {
+    "qmsx": "QMSx",
+    "dashboard": "Dashboard",
+    "defineErrorGroup": "Define error group",
+    "defineErrorGroupCreate": "Create error group",
+    "defineErrorGroupDetail": "Error group details",
+    "defineErrorGroupEdit": "Edit error group",
+    "qualityControl": "Quanlity control",
+    "analysisAndReport": "Analysis and report",
+    "qualityReport": "Quality report",
+    "setting": "Setting"
+  },
+  "common": {},
+  "actionBar": {},
+  "defineErrorGroup": {
+    "errorGroupList": "error category list",
+    "searchPlaceholder": "Search error category by name or code",
+    "code": "error category code",
+    "name": "error category name",
+    "description": "Description",
+    "errorstable": {},
+    "modalLock": {},
+    "statusType": {},
+    "modalDelete": {},
+    "errorDialog": {},
+    "notification": {
+      "createSuccess": "Create error category succesfully",
+      "updateSuccess": "Edit error category succesfully",
+      "deleteSuccess": "Delete error category succesfully"
+    }
+  },
+  "defineError": {
+    "modalLock": {},
+    "causesTable": {},
+    "causeDialog": {},
+    "statusType": {},
+    "modalDelete": {},
+    "notification": {}
+  },
+  "defineCause": {
+    "causesTable": {},
+    "modalLock": {},
+    "statusType": {},
+    "modalDelete": {},
+    "notification": {}
+  },
+  "evaluationCriteria": {
+    "modalDelete": {},
+    "modalLock": {},
+    "itemsTable": {},
+    "statusType": {},
+    "checkTypeOption": {},
+    "testResult": {},
+    "notification": {},
+    "errors": {}
+  },
+  "evaluationCriteriaManagement": {
+    "modalDelete": {},
+    "modalLock": {},
+    "itemsTable": {},
+    "statusType": {},
+    "checkTypeOption": {},
+    "testResult": {},
+    "notification": {},
+    "errors": {}
+  },
+  "evaluationReceiptTemplate": {
+    "modalCriteria": {},
+    "modalDelete": {},
+    "modalLock": {},
+    "modalPrint": {},
+    "itemsTable": {},
+    "statusType": {},
+    "checkTypeOption": {},
+    "testResult": {},
+    "qcOptions": {},
+    "notification": {},
+    "errors": {}
+  },
+  "qcRequest": {
+    "modalDelete": {},
+    "modalLock": {},
+    "modalPrint": {},
+    "itemsTable": {},
+    "statusType": {},
+    "checkTypeOption": {},
+    "testResult": {},
+    "qcOptions": {},
+    "requestOptions": {},
+    "modalStatus": {},
+    "notification": {}
+  },
+  "qcOrder": {
+    "modalDelete": {},
+    "modalStatus": {},
+    "modalPrint": {},
+    "itemsTable": {},
+    "modalCriteria": {},
+    "statusType": {},
+    "criteriaTypeOption": {},
+    "testResult": {},
+    "qcOptions": {},
+    "requestOptions": {},
+    "notification": {}
+  },
+  "qcExecute": {
+    "needQcTable": {},
+    "qcProgressTable": {},
+    "resultErrorTable": {},
+    "qcResultTable": {},
+    "modalListError": {
+      "errors": {}
+    },
+    "modalCriteria": {},
+    "checkTypeOption": {},
+    "notification": {}
+  },
+  "qcResult": {
+    "itemsTable": {},
+    "modalChangeStatus": {}
+  },
+  "ticketReportError": {
+    "qcCommand": {},
+    "modalPrint": {},
+    "itemsTable": {},
+    "modalRecommend": {},
+    "notification": {}
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "chart": {}
+  },
+  "qcSetting": {
+    "qcSettingMethod": {},
+    "qcSettingTodoQuantity": {},
+    "notification": {}
+  },
+  "qcExecuteManagement": {
+    "modalDelete": {},
+    "modalConfirm": {},
+    "modalAssign": {},
+    "modalReject": {},
+    "modalHistory": {},
+    "requestTypeOptions": {},
+    "itemsTable": {},
+    "historyTable": {},
+    "errors": {}
+  }
+}

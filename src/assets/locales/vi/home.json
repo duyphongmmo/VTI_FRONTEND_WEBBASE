@@ -1,0 +1,36 @@
+{
+  "subTitle": "Giải pháp toàn diện",
+  "title": "cho địa điểm kho",
+  "description": "Nâng cao năng suất lao động, tiết kiệm tối ưu chi phí. Quản lý hiệu quả, thông minh được sử dụng bởi những doanh nghiệp sản xuất hàng đầu tại Việt Nam & Nhật Bản",
+  "overview1": "Nâng cao năng suất\nsản xuất",
+  "overview2": "Giảm chi phí",
+  "overview3": "Cải thiện chất lượng\nsản phẩm",
+  "overview4": "Giảm hao hụt\nlãng phí",
+  "menu": {
+    "deviceStatusDashboard": "Dashboard trạng thái thiết bị"
+  },
+  "dashboard": {
+    "title": "Dashboard trạng thái thiết bị",
+    "deviceForManufacturing": "Thiết bị dùng cho sản xuất",
+    "plant": "Xưởng",
+    "device": "Thiết bị",
+    "factory": "Nhà máy",
+    "floor": "Tầng",
+    "productionLine": "Dây chuyền",
+    "warning": "Cảnh báo",
+    "all": "Tất cả",
+    "active": "Hoạt động",
+    "stop": "Dừng",
+    "error": "Lỗi",
+    "off": "Tắt",
+    "quantity": "Số lượng",
+    "placeholder": {
+      "plant": "Chọn xưởng",
+      "floor": "Chọn tầng",
+      "productionLine": "Chọn dây chuyền",
+      "device": "Chọn thiết bị"
+    },
+    "warningMessage": "Ngày {{date}} {{team}} có công việc {{jobType}} cho thiết bị {{deviceCode}}{{factory}}{{plant}}{{floor}}{{position}}",
+    "loadMore": "Xem thêm"
+  }
+}

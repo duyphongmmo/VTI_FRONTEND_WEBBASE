@@ -1,0 +1,36 @@
+{
+  "subTitle": "包括的なソリューション",
+  "title": "工場向け",
+  "description": "生産性向上とコスト削減に貢献ベトナムと日本における製造業のトップ企業が導入しているスマート且つ効率的な管理",
+  "overview1": "生産性の向上\n 生産",
+  "overview2": "コスト削減",
+  "overview3": "品質改善\n 製品",
+  "overview4": "無駄削減\n 浪費",
+  "menu": {
+    "deviceStatusDashboard": "設備状態ダッシュボード"
+  },
+  "dashboard": {
+    "title": "設備状態ダッシュボード",
+    "deviceForManufacturing": "生産用設備",
+    "plant": "製造棟",
+    "device": "設備",
+    "factory": "工場",
+    "floor": "フロア",
+    "productionLine": "ライン",
+    "warning": "アラート通知",
+    "all": "すべて",
+    "active": "活性",
+    "stop": "停止",
+    "error": "故障あり",
+    "off": "電源OFF",
+    "quantity": "数量",
+    "placeholder": {
+      "plant": "作業場選択",
+      "floor": "フロア選択",
+      "productionLine": "ライン選択",
+      "device": "設備を選択"
+    },
+    "warningMessage": "{{date}}にチーム{{team}}は設備{{deviceCode}}{{factory}}{{plant}}{{floor}}{{position}}に{{jobType}} の作業があります。",
+    "loadMore": "もっと見る"
+  }
+}

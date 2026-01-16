@@ -1,0 +1,346 @@
+{
+  "actionBar": {
+    "accept": "確認",
+    "approve": "保存して承認者へ",
+    "back": "戻る",
+    "cancel": "取消",
+    "closeNotification": "通知終了",
+    "create": "新規登録",
+    "delete": "削除",
+    "draft": "下書き保存",
+    "edit": "情報編集",
+    "import": "データ入力",
+    "importAgain": "再取込",
+    "save": "保存",
+    "status": "ステータス"
+  },
+  "autocomplete": {
+    "hint": "検索キーを入力",
+    "loadingText": "データを読み込んでいます。",
+    "noOptionsText": "該当データなし",
+    "quickCreate": "一括作成",
+    "selectAll": "全選択"
+  },
+  "bulkActions": {
+    "actions": "操作",
+    "approve": "承認",
+    "confirm": "確認",
+    "delete": "削除",
+    "promptContent1": "ご指定の{{number}}件のレコードを承認します。よろしいですか。",
+    "promptContent2": "ご指定の{{number}}件のレコードを拒否します。よろしいですか。",
+    "promptContent3": "ご指定の{{number}}件のレコードを削除します。よろしいですか。",
+    "promptContent4": "ご指定の{{number}}件のレコードを確認します。よろしいですか。",
+    "promptTitle1": "通知",
+    "promptTitle2": "通知",
+    "promptTitle3": "通知",
+    "promptTitle4": "通知",
+    "reject": "拒否"
+  },
+  "common": {
+    "accept": "確認",
+    "action": "操作",
+    "active": "活性",
+    "activeButton": "ロック解除",
+    "addRow": "行を追加",
+    "all": "すべて",
+    "apply": "適用",
+    "approve": "承認",
+    "back": "戻る",
+    "cancel": "取消",
+    "clone": "複写",
+    "close": "閉じる",
+    "complete": "完了",
+    "confirm": "確認",
+    "confirmMessage": {
+      "confirm": "確認します。よろしいですか。",
+      "reject": "拒否します。よろしいですか。"
+    },
+    "confirm_execute": "実施確認",
+    "create": "新規登録",
+    "createdAt": "登録日",
+    "creator": "登録者",
+    "day": "日付",
+    "delete": "削除",
+    "edit": "見直し",
+    "errorPrint": "プリンター接続エラー",
+    "file": "添付ファイル",
+    "filter": "絞込",
+    "import": "取込",
+    "inActive": "非活性",
+    "inActiveButton": "ロック",
+    "no": "いいえ",
+    "notify": "通知",
+    "null": null,
+    "percent": "％",
+    "print": "印刷",
+    "reason": "理由",
+    "reasonPlaceholder": "理由を入力",
+    "reject": "拒否",
+    "save": "保存",
+    "search": "絞込",
+    "searchPlaceholder": "データを検索",
+    "status": "ステータス",
+    "sync": "同期",
+    "system": "系 統",
+    "update": "編集",
+    "updateStatus": "ステータス更新",
+    "updatedAt": "最新更新日",
+    "yes": "はい",
+    "attachFile": "添付ファイル",
+    "note": "備考",
+    "item": {
+      "title": "製品",
+      "code": "品番",
+      "name": "品名",
+      "unit": "単位"
+    }
+  },
+  "dataTable": {
+    "cancel": "すべて削除",
+    "filterButton": "絞込",
+    "filterByKeys": "キーで検索",
+    "filterTitle": "フィルター",
+    "noData": "該当データなし",
+    "showAllColumns": "すべて",
+    "tableSetting": {
+      "aliasName": "列名設定",
+      "cancel": "取消",
+      "dialogTitle": "表示設定",
+      "left": "左側",
+      "minWidth": "最小幅",
+      "name": "デフォルト列名",
+      "reset": "デフォルトに戻す",
+      "right": "右側",
+      "save": "保存",
+      "side": "表示位置",
+      "sticky": "固定化",
+      "validateSmallerThanMinWidth": "最小幅以上の値でなければなりません。",
+      "visible": "表示",
+      "width": "幅設定"
+    },
+    "title": "一覧表示",
+    "visibleColumns": "選択した項目を表示"
+  },
+  "date": {
+    "maxToday": "生年月日は現在日付より前でなければなりません。",
+    "minToday": "現在日付より前の日付を選択してはいけません。"
+  },
+  "dateRangePicker": {
+    "from": "開始日",
+    "to": "終了日"
+  },
+  "day": {
+    "friday": "金曜日",
+    "monday": "月曜日",
+    "s_friday": "金",
+    "s_monday": "月",
+    "s_saturday": "土",
+    "s_sunday": "日",
+    "s_thurday": "5月",
+    "s_tueday": "3月",
+    "s_wenesday": "水",
+    "saturday": "土曜日",
+    "sunday": "日曜日",
+    "thurday": "木曜日",
+    "tueday": "火曜日",
+    "wednesday": "水曜日"
+  },
+  "days": "日付",
+  "errorResponse": {
+    "notAcceptable": "アクセス権限がありません。"
+  },
+  "fileUpload": {
+    "accept": "合格",
+    "acceptAll": "すべて",
+    "drag": "ここにファイルをドラッグアンドドロップ、または",
+    "error": {
+      "invalidNumberOfFiles": "ファイルは{{max}}件を超過してアップロードしてはいけません。",
+      "invalidSize": "アップロードファイルの最大サイズは",
+      "invalidType": "ファイル形式は不正です。アップロード可能形式：",
+      "invalidTypeMsg": "ファイルの形式が不正です。",
+      "lineError": "エラーが発生した件目："
+    },
+    "noData": "ファイルがありません。",
+    "selectFile": "ファイル選択",
+    "title": "添付ファイル",
+    "upload": "アップロード"
+  },
+  "flow": {
+    "createdAt": "登録日",
+    "status": "ステータス"
+  },
+  "form": {
+    "allowDemicalAfterPoint": "小数点以下は{{number}}桁でなければなりません。",
+    "bigNumber": "値は大きすぎます。",
+    "biggerThanMinDate": "開始日は{{from}}より後の日付を指定してください。",
+    "dateRange": "{{from}}から{{to}}までの日付を指定してください。",
+    "duplicates": "本項目は重複してはいけません。",
+    "equalNumber": "値は{{value}}と等しくなければなりません。",
+    "greaterThanZero": "0より大きい値でなければなりません。",
+    "integer": "本項目に整数を入力してください。",
+    "invalidBreakTime": "休憩時間はシフトの作業期間内でなければなりません。",
+    "invalidDateRange": "開始日は終了日より前の日付を指定してください。",
+    "invalidFormat": "入力された形式が不正です。",
+    "invalidInformation": "{{object}}情報は不正です。",
+    "invalidTimeRange": "終了時間は開始時間より後にする必要があります。",
+    "invalidTimeStart": "シフトの開始時間は直前シフトの終了時間と一致しなければなりません。",
+    "length": "{{length}}文字で入力してください。",
+    "mappingPassword": "※パスワードが間違っています。",
+    "maxDate": "終了日は{{to}}以前の日付を指定してください。",
+    "maxDateBigger": "終了日には{{from}}以降の日付を指定してください。",
+    "maxLength": "{{max}}文字以内で入力してください。",
+    "maxNumber": "{{max}}以内で入力してください。",
+    "maxYearExceeded": "{{year}}年を超えてはいけません。",
+    "minDate": "開始日は{{from}}以降の日付を指定してください。",
+    "minItem": "{{min}}以上の製品を選択してください。",
+    "minLength": "{{min}}文字以上で入力してください。",
+    "minNumber": "{{min}}以上の値を指定してください。",
+    "minYearExceeded": "{{year}}年以上の値でなければなりません。",
+    "moreThanNumber": "{{min}}より大きい値でなければなりません。",
+    "numeric": "本項目には数字を入力してください。",
+    "required": "本項目は必須項目です。",
+    "smallerCurrentDay": "選択される日付は現在日より前でなければなりません。",
+    "smallerThan": "{{max}}より小さい値でなければなりません。",
+    "smallerThanCurrentMonth": "現在月より前でなければなりません。",
+    "smallerThanMaxDate": "終了日は{{to}}より前の日付を指定してください。",
+    "special": "本項目は特殊文字が含まれてはいけません。",
+    "to": "～",
+    "validCode": "英数字のみを使用してください。少なくとも1つの英字と1つの数字を使用する必要があります。",
+    "validEmail": "メールアドレスを正しく入力してください。",
+    "validPassword": "パスワードは英数字で入力してください。",
+    "validPhone": "ご指定の電話番号は正しくありません。",
+    "validTime": "時間は不正です。",
+    "validUserName": "ユーザ名は英数字で入力してください。",
+    "validatePassword": "パスワードには、大文字、小文字、数字、特殊文字を少なくとも1つ含める必要があります。"
+  },
+  "ganttChart": {
+    "completed": "進捗",
+    "endDate": "終了日",
+    "startDate": "開始日",
+    "taskName": "作業"
+  },
+  "hours": "時",
+  "import": {
+    "downloadTemplate": "テンプレートをダウンロードして",
+    "log": "押下してデータ取込結果をダウンロードする",
+    "prefix": {
+      "importLog": "取込ログ",
+      "importTemplate": "取込テンプレート"
+    },
+    "result": "取り込みました。 成功件数：{0}件 失敗件数：{1}件",
+    "stepDownloadTemplate": {
+      "description": "ガイドを参考してご入力ください。",
+      "title": "ステップ1：テンプレートをダウンロードする。"
+    },
+    "stepUploadData": {
+      "description": "ファイルを選択、またはドロップしてデータを取り込んでください。",
+      "fileType": "XLS/XLSX",
+      "support": "対応可能ファイル形式：",
+      "title": "ステップ2：情報をアップロードする。"
+    },
+    "title": "データ入力",
+    "unexpectedError": "データ取込にエラーが発生しました。"
+  },
+  "importExportMenu": {
+    "export": "データ出力",
+    "import": "データ入力",
+    "importExport": "データ入出力"
+  },
+  "message": {
+    "fieldIsRequired": "このフィールドは必須項目です。",
+    "lessThan": "{{max}}より小さい値でなければなりません。",
+    "noData": "該当データがありません。",
+    "unknownError": "エラーが発生しました。再度お試しください。"
+  },
+  "minutes": "分",
+  "modal": {
+    "btnCancel": "取消",
+    "btnClose": "閉じる",
+    "btnSubmit": "確認"
+  },
+  "moduleMenu": {
+    "configuration": "設定",
+    "database": "マスタデータ",
+    "hrm": "HRM",
+    "other": "ソリューション"
+  },
+  "month": {
+    "apr": "4月",
+    "aug": "8月",
+    "dec": "12月",
+    "feb": "2月",
+    "jan": "1月",
+    "jul": "7月",
+    "jun": "6月",
+    "mar": "3月",
+    "may": "5月",
+    "nov": "11月",
+    "oct": "10月",
+    "s_apr": "4月",
+    "s_aug": "8月",
+    "s_dec": "12月",
+    "s_feb": "2月",
+    "s_jan": "1月",
+    "s_jul": "7月",
+    "s_jun": "6月",
+    "s_mar": "3月",
+    "s_may": "5月",
+    "s_nov": "11月",
+    "s_obt": "10月",
+    "s_sep": "9月",
+    "sep": "9月"
+  },
+  "months": "月",
+  "notification": {
+    "action": {
+      "confirm": "確認",
+      "reject": "拒否"
+    },
+    "created": "作成しました。",
+    "heading": "通知",
+    "hoursAgo": "{{time}}時前",
+    "minutesAgo": "{{time}}分前",
+    "noData": "通知がありません。",
+    "notificationIsOff": "通知がオフになっています。",
+    "readAll": "すべて既読",
+    "readOne": "既読にする",
+    "turnOff": "通知をオフにする",
+    "turnOn": "通知をオンにする"
+  },
+  "offTime": {
+    "afternoon": "午後休暇",
+    "allDay": "終日",
+    "morning": "午前休暇"
+  },
+  "page": {
+    "changePassword": "パスワード変更",
+    "copyright": "VTI Solutions製品 ©{{year}}",
+    "darkMode": "ダークモード",
+    "goBack": "前の画面に戻る",
+    "logout": "ログアウト",
+    "searchButton": "検索",
+    "searchPlaceholder": "データ検索",
+    "userInfo": "個人情報"
+  },
+  "pagination": {
+    "rowsPerPage": "表示件数",
+    "startEndRows": "{{start}} - {{end}}（全件数{{rows}}件）"
+  },
+  "quarter": {
+    "four": "第4四半期",
+    "one": "第1四半期",
+    "three": "第3四半期",
+    "two": "第2四半期"
+  },
+  "quarters": "四半期",
+  "seconds": "秒",
+  "setting": {
+    "title": "ダッシュボード設定"
+  },
+  "toast": {
+    "defaultError": "エラーが発生しました。",
+    "notificationTitle": "通知"
+  },
+  "weeks": "週",
+  "years": "年"
+}

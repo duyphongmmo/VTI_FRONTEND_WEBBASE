@@ -1,0 +1,71 @@
+{
+  "menu": {
+    "hrm": "HRM",
+    "employeeManagement": "社員管理",
+    "employeeManagementEdit": "社員編集",
+    "employeeManagementDetail": "社員詳細",
+    "hourSalaryCost": "実行正味賃金管理",
+    "hourSalaryCostEdit": "実行正味賃金更新",
+    "hourSalaryCostDetail": "人件費詳細"
+  },
+  "general": {
+    "updateStatus": "状態編集",
+    "status": "ステータス",
+    "active": "活性",
+    "inactive": "非活性",
+    "confirmMessage": "状態を編集します。よろしいですか。",
+    "suffix": {
+      "denominations": "VND"
+    },
+    "system": "システム"
+  },
+  "iconButtonHover": {
+    "view": "詳細閲覧",
+    "update": "編集",
+    "delete": "削除",
+    "confirm": "承認",
+    "reject": "拒否",
+    "approve": "承認",
+    "approveRequest": "承認依頼",
+    "active": "ロック解除",
+    "inActive": "ロック",
+    "clone": "複写",
+    "complete": "完了"
+  },
+  "employeeManagement": {
+    "code": "社員番号",
+    "name": "氏名",
+    "division": "部",
+    "section": "係",
+    "costCenter": "部署",
+    "position": "役職",
+    "phone": "電話番号",
+    "email": "メールアドレス",
+    "startedDate": "入社日",
+    "attachFile": "添付",
+    "note": "凡例",
+    "history": "変更履歴",
+    "updatedAt": "更新日"
+  },
+  "hourSalaryCost": {
+    "type": "集計区分",
+    "appliedDate": "適用日",
+    "vnCost": "時給（VND）",
+    "jpCost": "時給（JPY）",
+    "appliedTime": "有効期限",
+    "object": "対象",
+    "note": "凡例",
+    "history": "費用変更履歴",
+    "updatedAt": "更新日",
+    "vnCostBefore": "時給（VND）ー更新前",
+    "vnCostAfter": "時給（VND）ー更新後",
+    "types": {
+      "direct": "直接",
+      "indirect": "間接",
+      "other": "その他"
+    }
+  },
+  "exportFileName": {
+    "employeeManagement": "社員管理"
+  }
+}

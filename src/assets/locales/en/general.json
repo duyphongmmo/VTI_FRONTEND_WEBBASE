@@ -1,0 +1,230 @@
+{
+  "page": {
+    "searchButton": "Search",
+    "searchPlaceholder": "Search",
+    "goBack": "Back",
+    "copyright": "A product of VTI - Solution ©{{year}}",
+    "logout": "Logout"
+  },
+  "form": {
+    "required": "This field is required.",
+    "mappingPassword": "*Password is not correct.",
+    "maxLength": "Input max {{max}} character.",
+    "minLength": "Input min {{min}} character.",
+    "length": "Enter {{lenth}} characters",
+    "validEmail": "*Email is invalid.",
+    "validUserName": "User name includes only character and number.",
+    "validPassword": "Password includes only character and number.",
+    "validatePassword": "Password must contain at least uppercase lowercase, number and special character,",
+    "validPhone": "Phone number is invalid.",
+    "validCode": "Code includes only character and number.",
+    "minNumber": "Minimum number is {{min}}.",
+    "maxNumber": "Do not input more than {{max}}.",
+    "moreThanNumber": "Value must be greater than {{min}}",
+    "duplicates": "This field can not be duplicates.",
+    "dateRange": "The date must be between {{from}} to {{to}}.",
+    "minDate": "Begin date must be greater than or equal to {{from}}.",
+    "maxDate": "End date must be less than or equal to {{to}}.",
+    "maxDateBigger": "End date must be greater than or equal to {{from}}.",
+    "biggerThanMinDate": "Start date must be greater than {{from}}.",
+    "smallerThanMaxDate": "End date must be less than {{to}}.",
+    "invalidDateRange": "Start date must be less than end date.",
+    "to": "to",
+    "greaterThanZero": "This field must be graeter than 0.",
+    "integer": "This field must be interger.",
+    "numeric": "This field must be numeric.",
+    "invalidTimeRange": "End time must be greater than start time.",
+    "invalidTimeStart": "Start time of next shift must equal to end time of previous shift.",
+    "special": "This entry cannot contain special characters",
+    "invalidBreakTime": "Break time must be within the duration of work shift",
+    "validTime": "Time is invalid"
+  },
+  "toast": {
+    "notificationTitle": "Notification",
+    "defaultError": "Error occured"
+  },
+  "autocomplete": {
+    "noOptionsText": "No data",
+    "loadingText": "Loading data...",
+    "hint": "Enter keywords"
+  },
+  "dateRangePicker": {
+    "from": "From date",
+    "to": "To date"
+  },
+  "dataTable": {
+    "visibleColumns": "Display selected categories",
+    "filterTitle": "Search",
+    "filterButton": "Search",
+    "cancel": "Cancel",
+    "title": "List",
+    "noData": "No data.",
+    "showAllColumns": "All",
+    "tableSetting": {}
+  },
+  "pagination": {
+    "rowsPerPage": "Rows per page",
+    "startEndRows": "{{start}} - {{end}} per total {{row}}"
+  },
+  "date": {
+    "minToday": "Canoot selected before current date",
+    "maxToday": "Date of birth must be less than to day"
+  },
+  "month": {
+    "jan": "January",
+    "feb": "February",
+    "mar": "March",
+    "apr": "April",
+    "may": "May",
+    "jun": "June",
+    "jul": "July",
+    "aug": "August",
+    "sep": "September",
+    "oct": "October",
+    "nov": "November",
+    "dec": "December",
+    "s_jan": "Jan",
+    "s_feb": "Feb",
+    "s_mar": "Mar",
+    "s_apr": "Apr",
+    "s_may": "May",
+    "s_jun": "Jun",
+    "s_jul": "Jul",
+    "s_aug": "Aug",
+    "s_sep": "Sep",
+    "s_obt": "Obt",
+    "s_nov": "Nov",
+    "s_dec": "Dec"
+  },
+  "quarter": {},
+  "day": {
+    "monday": "Monday",
+    "tueday": "Tueday",
+    "wednesday": "Wednesday",
+    "thurday": "Thurday",
+    "friday": "Friday",
+    "saturday": "Sat",
+    "sunday": "Sunday",
+    "s_monday": "Mon",
+    "s_tueday": "Tue",
+    "s_wenesday": "Wed",
+    "s_thurday": "Thu",
+    "s_friday": "Fri",
+    "s_saturday": "Sat",
+    "s_sunday": "Sun"
+  },
+  "minutes": "Minute",
+  "hours": "Hour",
+  "days": "Days",
+  "weeks": "Week",
+  "months": "Months",
+  "years": "Years",
+  "ganttChart": {},
+  "actionBar": {
+    "accept": "Accept",
+    "back": "Back",
+    "cancel": "Cancel",
+    "create": "Create new",
+    "save": "Save",
+    "import": "Enter",
+    "closeNotification": "Close",
+    "importAgain": "Enter again",
+    "status": "Status"
+  },
+  "importExportMenu": {
+    "import": "Import",
+    "export": "Export",
+    "importExport": "Import/Export"
+  },
+  "import": {
+    "title": "Import",
+    "stepDownloadTemplate": {
+      "title": "Step 1: Download template",
+      "description": "and fill in as instruction"
+    },
+    "downloadTemplate": "Download template",
+    "stepUploadData": {
+      "title": "Step 2: Upload full information",
+      "description": "Select or drop a file in this area to import",
+      "support": "Support file ",
+      "fileType": "XLSX"
+    },
+    "result": "Successfully entered {0} rows {1} rows failed,",
+    "log": "Click here to download import result",
+    "unexpectedError": "Error occured when import",
+    "prefix": {
+      "importLog": "ImportLog",
+      "importTemplate": "ImportTemplate"
+    }
+  },
+  "fileUpload": {
+    "error": {
+      "invalidType": "The uploaded file format is invalid. Please upload files with format",
+      "invalidSize": "File size is invalid. Limited size is",
+      "invalidNumberOfFiles": "Import file quantity must not exceed"
+    }
+  },
+  "notification": {
+    "heading": "Notification",
+    "readOne": "Mark as read",
+    "noData": "No notifications",
+    "readAll": "All read",
+    "turnOff": "Turn off notification",
+    "turnOn": "Turn on notification",
+    "notificationIsOff": "Notification is Off",
+    "hoursAgo": "{{time}} hours ago",
+    "minutesAgo": "{{time}} minutes ago",
+    "action": {
+      "confirm": "Confirm",
+      "reject": "Reject"
+    }
+  },
+  "message": {
+    "fieldIsRequired": "This field is required",
+    "unknownError": "Error occured please try again,",
+    "noData": "No data",
+    "lessThan": "Value must be smaller than {{max}}"
+  },
+  "modal": {
+    "btnSubmit": "Confirm",
+    "btnCancel": "Cancel",
+    "btnClose": "Close"
+  },
+  "setting": {},
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back",
+    "action": "Action",
+    "create": "Create new",
+    "update": "Update",
+    "save": "Save",
+    "print": "Print",
+    "createdAt": "Created date",
+    "updatedAt": "Updated date",
+    "accept": "Confirm",
+    "reject": "Reject",
+    "notify": "Notification",
+    "confirmMessage": {
+      "confirm": "Are you sure to confirm?",
+      "reject": "Are you sure to reject?"
+    },
+    "creator": "Created by",
+    "search": "Search",
+    "filter": "Filter",
+    "item": {}
+  },
+  "moduleMenu": {
+    "database": "Master data",
+    "configuration": "Configuration",
+    "other": "Other"
+  },
+  "bulkActions": {
+    "actions": "Actions"
+  },
+  "errorResponse": {},
+  "offTime": {},
+  "flow": {}
+}

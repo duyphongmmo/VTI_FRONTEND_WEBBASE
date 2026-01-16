@@ -1,0 +1,61 @@
+{
+  "menu": {
+    "configuration": "Configuration",
+    "companyCustomerSetting": "Setup General Information",
+    "userManagement": "User management",
+    "userManagementCreate": "Create user",
+    "userManagementEdit": "Edit user",
+    "userManagementDetail": "User details",
+    "userPermission": "Decentralize"
+  },
+  "general": {},
+  "iconButtonHover": {},
+  "common": {},
+  "companyCustomerSetting": {
+    "nameCustomer": "Customer company name",
+    "colorBrand": "Brand color",
+    "email": "Contact email",
+    "phoneNumber": "Contact phone number",
+    "address": "Contact address",
+    "btnSave": "Save settings",
+    "canner": "Cancel"
+  },
+  "userStatus": {},
+  "companyChart": {},
+  "departmentList": {},
+  "departmentAssign": {},
+  "roleList": {},
+  "roleManagement": {},
+  "roleAssign": {},
+  "userPermission": {},
+  "changePassword": {},
+  "defineCostCenter": {
+    "history": {},
+    "typeVn": {},
+    "typeEn": {},
+    "typeJp": {},
+    "totalizingNameVn": {},
+    "totalizingNameEn": {},
+    "totalizingNameJp": {},
+    "status": {}
+  },
+  "defineDivision": {
+    "history": {},
+    "status": {}
+  },
+  "defineSection": {
+    "history": {},
+    "status": {}
+  },
+  "holon": {
+    "status": {},
+    "history": {}
+  },
+  "emailNotification": {
+    "functionList": {}
+  },
+  "location": {
+    "modalDelete": {},
+    "modalLock": {}
+  }
+}

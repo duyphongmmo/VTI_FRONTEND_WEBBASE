@@ -1,0 +1,946 @@
+{
+  "general": {
+    "updateStatus": "状態編集",
+    "active": "活性",
+    "inactive": "非活性"
+  },
+  "menu": {
+    "qmsx": "QMS-X",
+    "dashboard": "ダッシュボード",
+    "planQc": "検査計画",
+    "qcRequest": "検査申請管理",
+    "qcRequestCreate": "検査申請登録",
+    "qcRequestDetail": "検査申請詳細",
+    "qcRequestEdit": "検査申請編集",
+    "qcOrder": "検査指示管理",
+    "qcOrderCreate": "検査指示管理の作成",
+    "qcOrderDetail": "検査指示管理の詳細",
+    "qcOrderEdit": "検査指示管理の編集",
+    "qcExecute": "検査実施",
+    "needQC": "検査一覧",
+    "qcResultCreate": "検査結果登録",
+    "qcResultDetail": "検査結果詳細",
+    "qcExecuteStart": "検査（QC）",
+    "qcProgress": "検査進捗",
+    "qcManagement": "検査一覧管理",
+    "baseData": "マスタデータ",
+    "defineCause": "原因登録",
+    "defineCauseCreate": "原因登録",
+    "defineCauseDetail": "原因詳細",
+    "defineCauseEdit": "原因編集",
+    "defineError": "不良登録",
+    "defineErrorCreate": "不良登録",
+    "defineErrorDetail": "不良詳細",
+    "defineErrorEdit": "不良編集",
+    "defineErrorGroup": "欠陥グループ登録",
+    "defineErrorGroupCreate": "欠陥グループ作成",
+    "defineErrorGroupDetail": "欠陥グループ詳細",
+    "defineErrorGroupEdit": "欠陥グループ編集",
+    "evaluationCriteria": "評価基準登録",
+    "evaluationCriteriaCreate": "評価基準登録",
+    "evaluationCriteriaDetail": "評価基準詳細",
+    "evaluationCriteriaEdit": "評価基準編集",
+    "evaluationCriteriaManagement": "評価基準登録",
+    "evaluationCriteriaManagementCreate": "評価基準登録",
+    "evaluationCriteriaManagementDetail": "評価基準詳細",
+    "evaluationCriteriaManagementEdit": "評価基準編集",
+    "evaluationReceiptTemplate": "評価フォーム登録",
+    "evaluationReceiptTemplateCreate": "評価フォーム登録",
+    "evaluationReceiptTemplateDetail": "評価フォーム詳細",
+    "evaluationReceiptTemplateEdit": "評価フォーム編集",
+    "qualityControl": "品質管理",
+    "ticketReportError": "不良報告書",
+    "ticketReportErrorDetail": "不良報告書詳細",
+    "proposedHandling": "処置方法",
+    "proposedHandlingCreate": "処置方法登録",
+    "proposedHandlingDetail": "処置方法詳細",
+    "proposedHandlingEdit": "処置方法編集",
+    "analysisAndReport": "分析・報告",
+    "qualityReport": "品質報告 Báo cáo chất lượng",
+    "qualityReportCreate": "品質レポート登録",
+    "qualityReportDetail": "品質レポート詳細",
+    "qualityReportEdit": "品質レポート編集",
+    "setting": "設定",
+    "qcForm": "検査方法",
+    "qcFormCreate": "検査方法登録",
+    "qcFormDetail": "検査方法詳細",
+    "qcFormEdit": "検査方法編集",
+    "qcResult": "検査結果",
+    "qcMethod": "検査方式"
+  },
+  "common": {
+    "printReceipt": "伝票印刷",
+    "active": "活性",
+    "inactive": "非活性",
+    "cancel": "取消",
+    "confirm": "確認済",
+    "reject": "拒否",
+    "inprogress": "実施中",
+    "complete": "完了",
+    "waiting": "承認待ち",
+    "draft": "下書き",
+    "doing": "実施中",
+    "notDo": "未実行",
+    "done": "作成済"
+  },
+  "actionBar": {
+    "back": "戻る",
+    "delete": "削除",
+    "active": "活性",
+    "inActive": "非活性",
+    "edit": "情報編集",
+    "cancel": "取消",
+    "ceateNew": "新規作成",
+    "ceateAndShare": "作成・提出",
+    "save": "保存",
+    "submit": "登録",
+    "saveAndShare": "保存・提出",
+    "confirm": "確認",
+    "reject": "拒否",
+    "show": "表示",
+    "completed": "完了",
+    "cancelled": "取消",
+    "close": "閉じる",
+    "no": "いいえ",
+    "yes": "はい"
+  },
+  "defineErrorGroup": {
+    "errorGroupList": "欠陥グループ一覧",
+    "searchPlaceholder": "グループコードまたはグループ名で欠陥グループを検索",
+    "code": "欠陥グループコード",
+    "name": "欠陥グループ名",
+    "description": "説明",
+    "createdAt": "登録日",
+    "createdBy": "登録者",
+    "status": "ステータス",
+    "systemDate": "システム時間",
+    "nameFileExport": "不良グループ登録",
+    "errorstable": {
+      "title": "故障一覧",
+      "addNew": "不良追加",
+      "code": "不良コード",
+      "name": "不良名",
+      "description": "説明",
+      "action": "操作"
+    },
+    "modalLock": {
+      "lockTitle": "不良グループロック",
+      "unLockTitle": "不良グループロック解除",
+      "lockContent": "ロックします。よろしいですか。",
+      "unLockContent": "ロック解除します。よろしいですか。"
+    },
+    "statusType": {
+      "active": "活性",
+      "inactive": "非活性"
+    },
+    "modalDelete": {
+      "title": "欠陥グループ削除",
+      "content": "削除します。よろしいですか。"
+    },
+    "errorDialog": {
+      "title": "不良登録",
+      "code": "不良コード",
+      "name": "不良名",
+      "description": "内容",
+      "cancel": "取消",
+      "save": "確認"
+    },
+    "notification": {
+      "createSuccess": "欠陥グループ作成に成功しました。",
+      "updateSuccess": "欠陥グループ編集に成功しました。",
+      "deleteSuccess": "欠陥グループ削除に成功しました。",
+      "changeStatusSuccess": "ステータスが正常に変更されました。"
+    }
+  },
+  "defineError": {
+    "errorList": "故障一覧",
+    "code": "不良コード",
+    "name": "不良名",
+    "description": "説明",
+    "createdAt": "登録日",
+    "createdBy": "登録者",
+    "status": "ステータス",
+    "action": "操作",
+    "searchPlaceholder": "不良コードまたは不良名で検索",
+    "modalDeleteTitle": "不良削除",
+    "modalDeleteContent": "削除します。よろしいですか。",
+    "modalLockTitle": "不良ロック",
+    "systemDate": "システム時間",
+    "modalLock": {
+      "lockTitle": "不良ロック",
+      "unLockTitle": "不良ロック解除",
+      "lockContent": "ロックします。よろしいですか。",
+      "unLockContent": "ロック解除します。よろしいですか。"
+    },
+    "nameFileExport": "不良登録",
+    "causesTable": {
+      "title": "不良原因一覧",
+      "addNew": "原因追加",
+      "code": "原因コード",
+      "name": "原因の名称",
+      "description": "説明",
+      "action": "操作"
+    },
+    "causeDialog": {
+      "title": "原因登録",
+      "code": "原因コード",
+      "name": "原因の名称",
+      "description": "内容",
+      "cancel": "取消",
+      "save": "確認"
+    },
+    "statusType": {
+      "active": "活性",
+      "inactive": "非活性"
+    },
+    "modalDelete": {
+      "title": "不良削除",
+      "content": "削除します。よろしいですか。"
+    },
+    "notification": {
+      "createSuccess": "不良作成に成功しました。",
+      "updateSuccess": "更新に成功しました。",
+      "deleteSuccess": "正常に削除しました。",
+      "lockSuccess": "ステータスが正常に変更されました。"
+    }
+  },
+  "defineCause": {
+    "listTitle": "原因一覧",
+    "code": "原因コード",
+    "name": "原因の名称",
+    "searchPlaceholder": "原因コードまたは原因の名称で原因を検索",
+    "description": "説明",
+    "createdAt": "登録日",
+    "createdBy": "登録者",
+    "status": "ステータス",
+    "action": "操作",
+    "modalDeleteTitle": "原因削除",
+    "modalDeleteContent": "削除します。よろしいですか。",
+    "modalLockTitle": "原因ロック",
+    "systemDate": "システム時間",
+    "nameFileExport": "原因登録",
+    "causesTable": {
+      "title": "不良原因一覧",
+      "addNew": "原因追加",
+      "code": "原因コード",
+      "name": "原因の名称",
+      "description": "説明",
+      "action": "操作"
+    },
+    "modalLock": {
+      "lockTitle": "原因ロック",
+      "unLockTitle": "原因ロック解除",
+      "lockContent": "ロックします。よろしいですか。",
+      "unLockContent": "ロック解除します。よろしいですか。"
+    },
+    "statusType": {
+      "active": "活性",
+      "inactive": "非活性"
+    },
+    "modalDelete": {
+      "title": "原因削除",
+      "content": "削除します。よろしいですか。"
+    },
+    "notification": {
+      "createSuccess": "原因作成に成功しました。",
+      "updateSuccess": "原因編集に成功しました。",
+      "deleteSuccess": "原因削除に成功しました。",
+      "changeStatusSuccess": "ステータスが正常に変更されました。"
+    }
+  },
+  "evaluationCriteria": {
+    "listTitle": "評価基準一覧",
+    "detailTitle": "評価基準詳細",
+    "code": "基準コード",
+    "name": "基準名",
+    "searchPlaceholder": "基準コードまたは基準名で検索",
+    "description": "説明",
+    "createdAt": "登録日",
+    "createdBy": "登録者",
+    "status": "ステータス",
+    "action": "操作",
+    "systemDate": "システム時間",
+    "checkType": "検査区分",
+    "testInfo": "テスト情報",
+    "norm": "標準値",
+    "lowerBound": "下限値",
+    "upperBound": "上限値",
+    "modalDeleteTitle": "基準削除",
+    "modalDeleteContent": "削除します。よろしいですか。",
+    "modalLockTitle": "基準ロック",
+    "modalLockContent": "ロックします。よろしいですか。",
+    "nameFileExport": "基準登録",
+    "modalDelete": {
+      "title": "基準削除",
+      "content": "削除します。よろしいですか。",
+      "contentUsed": "この基準が既に使用されています。削除権限がありません。"
+    },
+    "modalLock": {
+      "lockTitle": "基準ロック",
+      "unLockTitle": "基準ロック解除",
+      "lockContent": "ロックします。よろしいですか。",
+      "unLockContent": "ロック解除します。よろしいですか。"
+    },
+    "itemsTable": {
+      "title": "部品一覧",
+      "addNew": "部品追加",
+      "addNewTitle": "詳細登録",
+      "checkContent": "テストの内容",
+      "name": "詳細表示",
+      "description": "内容",
+      "error": "発生し得る不良",
+      "action": "操作"
+    },
+    "statusType": {
+      "active": "活性",
+      "inactive": "非活性"
+    },
+    "checkTypeOption": {
+      "passFail": "合格 - 不合格",
+      "measure": "測定"
+    },
+    "testResult": {
+      "pass": "合格",
+      "fail": "不合格"
+    },
+    "notification": {
+      "createSuccess": "基準登録に成功しました。",
+      "updateSuccess": "基準編集に成功しました。",
+      "deleteSuccess": "基準削除に成功しました。",
+      "changeStatusSuccess": "ステータスが正常に変更されました。"
+    },
+    "errors": {
+      "minNorm": "登録した標準値より大きな値を指定してください。",
+      "maxNorm": "登録した標準値より小さい値を指定してください。"
+    }
+  },
+  "evaluationCriteriaManagement": {
+    "listTitle": "評価基準一覧",
+    "detailTitle": "評価基準詳細",
+    "code": "基準コード",
+    "name": "基準名",
+    "searchPlaceholder": "基準コードまたは基準名で検索",
+    "description": "説明",
+    "createdAt": "登録日",
+    "createdBy": "登録者",
+    "status": "ステータス",
+    "action": "操作",
+    "systemDate": "システム時間",
+    "checkType": "検査区分",
+    "testInfo": "テスト情報",
+    "norm": "標準値",
+    "lowerBound": "下限値",
+    "upperBound": "上限値",
+    "modalDeleteTitle": "基準削除",
+    "modalDeleteContent": "削除します。よろしいですか。",
+    "modalLockTitle": "基準ロック",
+    "modalLockContent": "ロックします。よろしいですか。",
+    "lock": "ロック",
+    "unLock": "アンロック",
+    "nameFileExport": "基準登録",
+    "modalDelete": {
+      "title": "基準削除",
+      "content": "削除します。よろしいですか。",
+      "contentUsed": "この基準が既に使用されています。削除権限がありません。"
+    },
+    "modalLock": {
+      "lockTitle": "基準ロック",
+      "unLockTitle": "基準ロック解除",
+      "lockContent": "ロックします。よろしいですか。",
+      "unLockContent": "ロック解除します。よろしいですか。"
+    },
+    "itemsTable": {
+      "title": "評価基準のリスト",
+      "name": "評価基準",
+      "checkType": "チェック方法",
+      "checkContent": "テストの内容",
+      "norm": "基準点",
+      "lowerBound": "下限値",
+      "upperBound": "上限値",
+      "errorGroup": "エラーの種類",
+      "inspectionType": "チェック方法",
+      "description": "説明内容",
+      "error": "発生する可能性のあるエラー",
+      "unit": "単位",
+      "note": "メモ",
+      "action": "操作"
+    },
+    "statusType": {
+      "active": "活性",
+      "inactive": "非活性"
+    },
+    "checkTypeOption": {
+      "passFail": "合格-不合格",
+      "measure": "測定",
+      "quantitative": "定量試験",
+      "qualitative": "定性試験",
+      "other": "その他の試験"
+    },
+    "testResult": {
+      "pass": "合格",
+      "fail": "不合格"
+    },
+    "notification": {
+      "createSuccess": "基準登録に成功しました。",
+      "updateSuccess": "基準編集に成功しました。",
+      "deleteSuccess": "基準削除に成功しました。",
+      "changeStatusSuccess": "ステータスが正常に変更されました。"
+    },
+    "errors": {
+      "minNorm": "登録した標準値より大きな値を指定してください。",
+      "maxNorm": "登録した標準値より小さい値を指定してください。",
+      "lowerBoundMustBeLessThanNorm": "下限は標準値より小さくなければなりません",
+      "upperBoundMustBeGreaterThanNorm": "上限は標準値より大きくなければなりません"
+    }
+  },
+  "evaluationReceiptTemplate": {
+    "listTitle": "評価フォーム⼀覧",
+    "detailTitle": "評価フォーム詳細",
+    "code": "様式コード",
+    "name": "様式名",
+    "searchPlaceholder": "フォームコードまたはフォームの名称で検索",
+    "description": "説明",
+    "createdAt": "登録日",
+    "createdBy": "登録者",
+    "status": "ステータス",
+    "action": "操作",
+    "systemDate": "システム時間",
+    "itemType": "資産区分",
+    "qcFormat": "検査方法",
+    "qcQuantity": "QC数",
+    "qcNumber": "検査回数",
+    "nameFileExport": "評価フォーム登録",
+    "modalCriteria": {
+      "title": "基準登録",
+      "checkType": "検査区分",
+      "name": "基準名",
+      "code": "基準コード",
+      "norm": "標準値",
+      "upperBound": "上限値",
+      "lowerBound": "下限値",
+      "cancel": "取消",
+      "save": "確認"
+    },
+    "modalDelete": {
+      "title": "帳票様式削除",
+      "content": "削除します。よろしいですか。",
+      "contentUsed": "このフォームが既に使用されています。削除権限がありません。"
+    },
+    "modalLock": {
+      "lockTitle": "フォームロック",
+      "unLockTitle": "フォームロック解除",
+      "lockContent": "ロックします。よろしいですか。",
+      "unLockContent": "ロック解除します。よろしいですか。"
+    },
+    "modalPrint": {
+      "title": "フォームを印刷します。よろしいですか。",
+      "fileName": "評価フォーム"
+    },
+    "itemsTable": {
+      "title": "評価基準一覧",
+      "addNew": "基準追加",
+      "checkType": "検査区分",
+      "name": "基準名",
+      "code": "基準コード",
+      "norm": "標準値",
+      "upperBound": "上限値",
+      "lowerBound": "下限値",
+      "important": "重要",
+      "action": "操作"
+    },
+    "statusType": {
+      "active": "活性",
+      "inactive": "非活性"
+    },
+    "checkTypeOption": {
+      "passFail": "合格 - 不合格",
+      "measure": "測定"
+    },
+    "testResult": {
+      "pass": "合格",
+      "fail": "不合格"
+    },
+    "qcOptions": {
+      "all": "全体QC",
+      "random": "ランダムQC"
+    },
+    "notification": {
+      "createSuccess": "帳票様式登録に成功しました。",
+      "updateSuccess": "帳票様式編集に成功しました。",
+      "deleteSuccess": "帳票様式削除に成功しました。",
+      "changeStatusSuccess": "ステータスが正常に変更されました。"
+    },
+    "errors": {
+      "minNorm": "登録した標準値より大きな値を指定してください。",
+      "maxNorm": "登録した標準値より小さい値を指定してください。"
+    }
+  },
+  "qcRequest": {
+    "listTitle": "検査申請一覧",
+    "detailTitle": "検査申請詳細",
+    "myList": "自分の申請",
+    "allList": "全ての申請",
+    "code": "検査申請コード",
+    "name": "検査申請名",
+    "returnDate": "結果受取時間",
+    "requestDate": "申請日",
+    "createdAt": "登録日",
+    "createdBy": "登録者",
+    "status": "ステータス",
+    "action": "操作",
+    "systemDate": "システム時間",
+    "requestSource": "依頼元",
+    "requestType": "申請種類",
+    "requestBy": "申請者",
+    "requestOrder": "対象生産指示",
+    "sendProposeProcess": "処置方法提出",
+    "yes": "はい",
+    "no": "いいえ",
+    "workOrder": "作業指示",
+    "description": "説明",
+    "itemType": "資産区分",
+    "qcOrder": "検査指示",
+    "nameFileExport": "検査申請一覧",
+    "modalDelete": {
+      "title": "検査申請削除",
+      "content": "削除します。よろしいですか。",
+      "contentUsed": "このフォームが既に使用されています。削除権限がありません。"
+    },
+    "modalLock": {
+      "title": "検査申請提出",
+      "content": "ロックします。よろしいですか。"
+    },
+    "modalPrint": {
+      "title": "検査申請を印刷します。よろしいですか。",
+      "fileName": "評価フォーム"
+    },
+    "itemsTable": {
+      "title": "検査製品一覧",
+      "modalTitle": "検査製品追加",
+      "addNew": "製品追加",
+      "itemType": "資産区分",
+      "code": "品番",
+      "name": "品名",
+      "checkType": "検査区分",
+      "lot": "ロット番号",
+      "planQuantity": "計画数",
+      "unit": "単位",
+      "action": "操作",
+      "cancel": "キャンセル",
+      "save": "確認"
+    },
+    "statusType": {
+      "active": "活性",
+      "inactive": "非活性"
+    },
+    "checkTypeOption": {
+      "passFail": "合格 - 不合格",
+      "measure": "測定"
+    },
+    "testResult": {
+      "pass": "合格",
+      "fail": "不合格"
+    },
+    "qcOptions": {
+      "all": "全体QC",
+      "random": "ランダムQC"
+    },
+    "requestOptions": {
+      "importPo": "入荷",
+      "importPro": "生産へ入庫",
+      "importImo": "その他入庫",
+      "exportSo": "出荷",
+      "exportPro": "生産へ出庫",
+      "exportExo": "その他出庫",
+      "requestArises": "発生申請",
+      "requestOutside": "その他申請"
+    },
+    "modalStatus": {
+      "titleSubmit": "検査申請提出",
+      "contentSubmit": "提出します。よろしいですか。",
+      "titleConfirm": "検査申請確認",
+      "contentConfirm": "確認します。よろしいですか。",
+      "titleReject": "検査申請拒否",
+      "contentReject": "拒否します。よろしいですか。"
+    },
+    "notification": {
+      "createSuccess": "検査申請が正常に登録されました。",
+      "updateSuccess": "更新に成功しました。",
+      "deleteSuccess": "正常に削除しました。",
+      "lockSuccess": "ステータスが正常に変更されました。"
+    }
+  },
+  "qcOrder": {
+    "listTitle": "検査指示一覧",
+    "detailTitle": "検査指示詳細",
+    "myQcOrder": "自分の検査指示",
+    "allQcOrder": "全ての検査指示",
+    "code": "検査指示コード",
+    "name": "検査指示名",
+    "qcCode": "検査申請コード",
+    "qcName": "検査申請名",
+    "returnDate": "完了日",
+    "requestType": "申請種類",
+    "createdAt": "登録日",
+    "createdBy": "登録者",
+    "status": "ステータス",
+    "action": "操作",
+    "description": "説明",
+    "processedDate": "検査予定日",
+    "qcRequest": "検査申請",
+    "requestSource": "依頼元",
+    "processedBy": "実施者",
+    "nameFileExport": "検査指示一覧",
+    "modalDelete": {
+      "title": "検査指示削除",
+      "content": "削除します。よろしいですか。",
+      "contentUsed": "このフォームが既に使用されています。削除権限がありません。"
+    },
+    "modalStatus": {
+      "titleSubmit": "検査指示提出",
+      "contentSubmit": "提出します。よろしいですか。",
+      "titleConfirm": "検査指示確認",
+      "contentConfirm": "確認します。よろしいですか。",
+      "titleReject": "検査指示拒否",
+      "contentReject": "拒否します。よろしいですか。"
+    },
+    "modalPrint": {
+      "title": "検査指示を印刷します。よろしいですか。",
+      "fileName": "検査指示"
+    },
+    "itemsTable": {
+      "title": "検査製品一覧",
+      "code": "品番",
+      "name": "品名",
+      "reviewType": "評価種類",
+      "criterias": "基準一覧",
+      "qcNumber": "検査回数",
+      "processedBy": "実施者",
+      "processedDate": "検査予定日",
+      "lot": "ロット番号",
+      "qcFormat": "検査方法",
+      "planQuantity": "計画数",
+      "planOrderQuantity": "指示での計画数",
+      "needQcQuantity": "検査数",
+      "unit": "単位"
+    },
+    "modalCriteria": {
+      "title": "基準一覧",
+      "addNew": "基準追加",
+      "code": "基準コード",
+      "name": "基準名",
+      "checkType": "検査区分",
+      "norm": "標準値",
+      "upperBound": "上限値",
+      "lowerBound": "下限値",
+      "important": "重要",
+      "action": "操作",
+      "cancel": "閉じる",
+      "save": "保存"
+    },
+    "statusType": {
+      "active": "活性",
+      "inactive": "非活性"
+    },
+    "criteriaTypeOption": {
+      "receipt": "様式テンプレート",
+      "criteria": "基準"
+    },
+    "testResult": {
+      "pass": "合格",
+      "fail": "不合格"
+    },
+    "qcOptions": {
+      "all": "全体QC",
+      "random": "ランダムQC"
+    },
+    "requestOptions": {
+      "importPo": "入荷",
+      "importPro": "生産へ入庫",
+      "importImo": "その他入庫",
+      "exportSo": "出荷",
+      "exportPro": "生産へ出庫",
+      "exportExo": "その他出庫",
+      "manufactureImp": "アウトプット製造",
+      "manufactureExp": "インプット製造",
+      "requestArises": "発生申請",
+      "requestOutside": "その他申請"
+    },
+    "notification": {
+      "createSuccess": "検査指示が正常に登録されました。",
+      "updateSuccess": "更新に成功しました。",
+      "deleteSuccess": "正常に削除しました。",
+      "lockSuccess": "ステータスが正常に変更されました。"
+    }
+  },
+  "qcExecute": {
+    "qcExecute": "検査（QC）",
+    "qcResult": "検査結果",
+    "listQcExecute": "検査一覧",
+    "qcCode": "検査指示コード",
+    "qcName": "検査指示名",
+    "itemCode": "品番",
+    "itemName": "品名",
+    "lot": "ロット番号",
+    "status": "ステータス",
+    "resultCode": "結果コード",
+    "resultName": "結果名",
+    "processedDate": "検査予定日",
+    "qcBy": "実施者",
+    "qcNumber": "検査回目",
+    "qcQuantity": "QC数",
+    "needQcQuantity": "検査数",
+    "didQcQuantity": "検査済数",
+    "remainingQc": "残数",
+    "errorQcQuantity": "検査時不良数量",
+    "confirmReceipt": "報告書確認",
+    "executeTime": "検査実施時間",
+    "startDate": "検査開始日",
+    "endDate": "検査終了日",
+    "minute": "分",
+    "btnCreateResult": "結果登録",
+    "needQcTable": {
+      "title": "検査一覧",
+      "code": "品番",
+      "name": "品名",
+      "lot": "ロット番号",
+      "criterias": "評価基準一覧",
+      "qcNumber": "検査回数",
+      "processedDate": "検査予定日",
+      "qcOrder": "検査指示",
+      "qcBy": "実施者",
+      "qcFormat": "検査方法",
+      "planQuantity": "検査指示の計画数",
+      "needQcQuantity": "検査数",
+      "didQcQuantity": "検査済数",
+      "remainingQc": "残数",
+      "qcPass": "合格数",
+      "qcError": "検査時不良数",
+      "unit": "単位",
+      "statusQc": "検査状況",
+      "conditionQc": "検査状況"
+    },
+    "qcProgressTable": {
+      "title": "検査進捗",
+      "qcNumberCol": "検査回目",
+      "qcNumber": "回{{number}}目",
+      "needQcQuantity": "検査数",
+      "didQcQuantity": "検査済数",
+      "remainingQc": "残数",
+      "qcPass": "合格数",
+      "qcError": "検査時不良数",
+      "statusQc": "検査状況",
+      "executeBtn": "実施"
+    },
+    "resultErrorTable": {
+      "title": "不良結果情報",
+      "code": "不良コード",
+      "name": "不良名",
+      "description": "説明",
+      "criteriaName": "基準名",
+      "errorQuantity": "不良発生数",
+      "errorCause": "不良原因",
+      "executeTime": "検査実施時間",
+      "startDate": "検査開始日",
+      "endDate": "検査終了日"
+    },
+    "qcResultTable": {
+      "title": "検査結果情報",
+      "resultName": "検査結果名",
+      "resultNamePlaceHolder": "検査結果名を入力",
+      "note": "備考",
+      "code": "不良コード",
+      "name": "不良名",
+      "description": "説明",
+      "criteriaName": "基準名",
+      "errorQuantity": "発生数量",
+      "errorCause": "不良原因",
+      "executeTime": "検査実施時間",
+      "startDate": "検査開始日",
+      "endDate": "検査終了日"
+    },
+    "modalListError": {
+      "title": "不良一覧を選択",
+      "addNew": "発生不良を選択",
+      "code": "基準コード",
+      "name": "基準名",
+      "checkType": "検査区分",
+      "norm": "標準値",
+      "upperBound": "上限値",
+      "lowerBound": "下限値",
+      "important": "重要",
+      "errors": {
+        "code": "不良コード",
+        "name": "不良名",
+        "description": "説明",
+        "errorQuantity": "発生数量"
+      },
+      "action": "操作",
+      "cancel": "閉じる",
+      "save": "保存"
+    },
+    "modalCriteria": {
+      "title": "基準一覧",
+      "addNew": "基準追加",
+      "code": "基準コード",
+      "name": "基準名",
+      "checkType": "検査区分",
+      "norm": "標準値",
+      "upperBound": "上限値",
+      "lowerBound": "下限値",
+      "important": "重要",
+      "action": "操作",
+      "cancel": "閉じる",
+      "save": "保存"
+    },
+    "checkTypeOption": {
+      "passFail": "合格 - 不合格",
+      "measure": "測定"
+    },
+    "notification": {
+      "createSuccess": "検査が正常に実行されました。",
+      "updateSuccess": "更新に成功しました。",
+      "deleteSuccess": "正常に削除しました。",
+      "lockSuccess": "ステータスが正常に変更されました。"
+    }
+  },
+  "qcResult": {
+    "title": "検査結果",
+    "listTitle": "検査結果一覧",
+    "qcCommandCode": "検査指示コード",
+    "qcCommandName": "検査指示名",
+    "itemCode": "品番",
+    "itemName": "品名",
+    "lot": "ロット番号",
+    "code": "結果コード",
+    "name": "結果名",
+    "createdBy": "登録者",
+    "qcBy": "実施者",
+    "quantity": "QC数",
+    "passQuantity": "合格数",
+    "failQuantity": "検査時不良数",
+    "qcQuantity": "QC数",
+    "qcFailQuantity": "検査時不良数量",
+    "qcTimes": "検査回目",
+    "status": "ステータス",
+    "action": "操作",
+    "description": "説明",
+    "processedDate": "実施予定時間",
+    "nameFileExport": "検査一覧",
+    "backModal": "検査成績書が作成されていません。検査成績書を作成しますか？",
+    "itemsTable": {
+      "title": "不良結果情報",
+      "errorNumber": "発生数量",
+      "errorCause": "不良原因",
+      "errorCode": "不良コード",
+      "errorName": "不良名",
+      "evaluationCriteriaName": "基準名"
+    },
+    "detailTitle": "検査結果詳細",
+    "qcDuration": "検査実施時間",
+    "startDate": "検査開始日",
+    "endDate": "検査終了日",
+    "confirmResult": "報告書確認",
+    "modalChangeStatus": {
+      "title": "検査成績書確認",
+      "content": "この検査成績書を確認します。よろしいですか。"
+    }
+  },
+  "ticketReportError": {
+    "listTitle": "不良報告書一覧",
+    "code": "不良報告書コード",
+    "qcCommand": {
+      "name": "検査指示名",
+      "code": "検査指示コード"
+    },
+    "createdBy": "登録者",
+    "createdAt": "登録日",
+    "status": "ステータス",
+    "action": "操作",
+    "description": "説明",
+    "modalPrint": {
+      "title": "不良報告書を印刷します。よろしいですか。"
+    },
+    "qcBy": "実施者",
+    "startDate": "検査開始日",
+    "endDate": "検査終了日",
+    "detailTitle": "不良報告書詳細",
+    "nameFileExport": "不良報告書",
+    "itemsTable": {
+      "title": "不良報告書詳細",
+      "code": "品番",
+      "name": "品名",
+      "lot": "ロット番号",
+      "planQuantity": "検査指示の計画数",
+      "todoQuantity": "検査数",
+      "testedQuantity": "検査済数",
+      "remainQuantity": "残数",
+      "passQuantity": "合格数",
+      "failQuantity": "検査時不良数量",
+      "result": "検査結果",
+      "errorName": "不良名",
+      "evaluationCriteriaName": "基準",
+      "causes": "不良原因",
+      "errorNumber": "発生数量",
+      "recommend": "提案"
+    },
+    "send": "報告書提出",
+    "modalRecommend": {
+      "titleAdd": "処置方法追加",
+      "titleEdit": "処置方法編集",
+      "itemName": "品名",
+      "errorName": "発生不良",
+      "causes": "原因",
+      "recommend": "処置方法",
+      "cancel": "取消",
+      "save": "確認"
+    },
+    "notification": {
+      "createSuccess": "処置方法が追加されました。"
+    }
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "numberOfAsNeededQC": "検査数",
+    "numberExecutedQC": "検査済数",
+    "numberErrorQC": "検査時不良数量",
+    "numberPassedQC": "QC合格数量",
+    "chart": {
+      "qcResultSummary": "検査結果統計",
+      "qcProgress": "検査指示の進捗",
+      "errorCriteriaSummary": "基準で不良統計",
+      "causeSummary": "不良原因統計",
+      "errorGroupSummary": "不良グループ統計",
+      "qcProgressSummary": "検査進捗統計"
+    }
+  },
+  "qcSetting": {
+    "qcSettingMethod": {
+      "title": "検査方式設定",
+      "mandatory": "検査数量十分",
+      "optional": "検査数量不十分"
+    },
+    "qcSettingTodoQuantity": {
+      "title": "検査数設定",
+      "testedOption": "前回検査済数",
+      "failOption": "前回検査時不良数量",
+      "passOption": "前回合格数"
+    },
+    "notification": {
+      "updateSuccess": "更新に成功しました。"
+    }
+  },
+  "qcExecuteManagement": {
+    "modalDelete": {},
+    "modalConfirm": {},
+    "modalAssign": {},
+    "modalReject": {},
+    "modalHistory": {},
+    "requestTypeOptions": {},
+    "itemsTable": {
+      "checkContent": "テストの内容"
+    },
+    "historyTable": {},
+    "errors": {}
+  }
+}
