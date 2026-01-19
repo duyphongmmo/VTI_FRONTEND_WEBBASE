@@ -218,3 +218,19 @@ export const useDashboardItemStockConstructionScl = () => {
     data,
   }
 }
+
+export const useDashboardYieldChart = () => {
+  const data = useSelector((state) =>
+    get(state, 'wmsx.dashboard.yieldChartList'),
+  )
+
+  const dispatch = useDispatch()
+  const actions = useMemo(
+    () => bindActionCreators(dashboardActions, dispatch),
+    [dispatch],
+  )
+  return {
+    actions,
+    data,
+  }
+}

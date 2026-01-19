@@ -59,6 +59,10 @@ export const WMSX_GET_STORAGE_ITEM_NORM_REPORT =
 export const WMSX_GET_STORAGE_ITEM_NORM_REPORT_SUCCESS =
   'WMSX_GET_STORAGE_ITEM_NORM_REPORT_SUCCESS'
 
+export const WMSX_GET_YIELD_CHART_LIST = 'WMSX_GET_YIELD_CHART_LIST'
+export const WMSX_GET_YIELD_CHART_LIST_SUCCESS = 'WMSX_GET_YIELD_CHART_LIST_SUCCESS'
+export const WMSX_GET_YIELD_CHART_LIST_FAILED = 'WMSX_GET_YIELD_CHART_LIST_FAILED'
+
 export function getPurchasedOrderImports(payload) {
   return {
     type: WMSX_GET_PURCHASED_ORDER_IMPORTS,
@@ -272,6 +276,26 @@ export const getStorageItemNormReportSuccess = (payload) => ({
   payload,
 })
 
+
+export const getYieldChartList = (payload, onSuccess, onError) => ({
+  type: WMSX_GET_YIELD_CHART_LIST,
+  payload,
+  onError,
+  onSuccess,
+})
+
+export const getYieldChartListSuccess = (payload) => ({
+  type: WMSX_GET_YIELD_CHART_LIST_SUCCESS,
+  payload,
+})
+
+
+export const getYieldChartListFailed = (payload) => ({
+  type: WMSX_GET_YIELD_CHART_LIST_FAILED,
+  payload,
+})
+
+
 export default {
   getItemGroupStockSummary,
   setItemGroupStockSummary,
@@ -305,4 +329,7 @@ export default {
   getGoodAllocatedQuantityReportSuccess,
   getStorageItemNormReport,
   getStorageItemNormReportSuccess,
+  getYieldChartList,
+  getYieldChartListSuccess,
+  getYieldChartListFailed,
 }

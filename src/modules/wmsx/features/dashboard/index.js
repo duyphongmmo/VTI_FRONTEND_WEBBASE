@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Grid } from '@mui/material'
 import { add, endOfDay, endOfWeek, startOfDay, startOfWeek } from 'date-fns'
@@ -14,13 +14,12 @@ import {
 import { addHours } from '~/utils'
 
 import { DASHBOARD_CHART, WMSX_DASHBOARD_CHART_OPTION } from '../../constants'
+import { useDashboardYieldChart } from '../../redux/hooks/useDashboard'
 import { ROUTE } from '../../routes/config'
-import AnalyzeReportChart from './components/chart'
-import { fakeData } from './components/chart/fake-data'
+import DefectRateChart from './components/chart/defect-rate-chart'
 import ExportReceipt from './components/import-export-receipt/export-receipt'
 import ImportReceipt from './components/import-export-receipt/import-receipt'
 import InventoryQuantity from './components/inventory-quantity'
-import ItemSummary from './components/item-summary'
 import UsedMaterialsReport from './components/materials-used'
 import MovementReport from './components/movement-report'
 import StockItemReport from './components/stock-item-report'
@@ -40,6 +39,18 @@ function Dashboard() {
     startOfWeek(new Date(), { weekStartsOn: 1 }),
     endOfWeek(new Date(), { weekStartsOn: 1 }),
   ]
+
+
+
+  const { data: yieldChartList, actions } =
+    useDashboardYieldChart()
+
+  useEffect(() => {
+    actions.getYieldChartList()
+  }, [])
+
+  console.log("yieldChartList",yieldChartList)
+
 
   const [selectedDate, setSelectedDate] = useState(initialDate)
   const groupOptions = [
@@ -114,8 +125,9 @@ function Dashboard() {
                   </Formik>
                 </Grid>
                 <Grid item xs={12}>
-                  <ItemSummary fromDate={fromDate} toDate={toDate} />
+                <DefectRateChart data={yieldChartList}/>
                 </Grid>
+                
                 {!visibleCharts.includes(
                   DASHBOARD_CHART.WAREHOUSE_IMPORT_RECEIPT,
                 ) ||
@@ -183,7 +195,7 @@ function Dashboard() {
                     <StockItemReport fromDate={fromDate} toDate={toDate} />
                   </Grid>
                 )}{' '}
-                {fakeData?.map((item) => (
+                {/* {fakeData?.map((item) => (
                   <Grid item xs={12} lg={12} md={12} sx={{ mb: 1.5 }}>
                     <AnalyzeReportChart
                       title={item?.title}
@@ -191,7 +203,8 @@ function Dashboard() {
                       data={item?.data}
                     />
                   </Grid>
-                ))}
+                ))} */}
+        
                 {isVisibleChart(DASHBOARD_CHART.MOVEMENT_REPORT) && (
                   <Grid item xs={12} lg={6} md={12} sx={{ mb: 1.5 }}>
                     <MovementReport

@@ -33,6 +33,8 @@ import {
   WMSX_GET_GOOD_ALLOCATED_QUANTITY_REPORT,
   getStorageItemNormReportSuccess,
   WMSX_GET_STORAGE_ITEM_NORM_REPORT,
+  getYieldChartListSuccess,
+  WMSX_GET_YIELD_CHART_LIST,
 } from '~/modules/wmsx/redux/actions/dashboard'
 import { api } from '~/services/api'
 import addNotification from '~/utils/toast'
@@ -126,6 +128,11 @@ export const getGoodAllocatedQuantityReport = (params) => {
 
 export const getStorageItemNormReport = (params) => {
   const uri = `/v1/items/dashboard/item-limit-stocks`
+  return api.get(uri, params)
+}
+
+export const getYieldChartList = (params) => {
+  const uri = `/v1/dashboard/get-dashboard-chart`
   return api.get(uri, params)
 }
 
@@ -557,6 +564,29 @@ function* doGetstorageItemNormReport(action) {
   }
 }
 
+function* doGetYieldChartList(action) {
+  try {
+    const response = yield call(getYieldChartList, action?.payload)
+
+    if (response?.statusCode === 200) {
+      yield put(getYieldChartListSuccess(response?.data?.charts))
+    }
+    else {
+      addNotification(
+        response?.message || response?.statusText,
+        NOTIFICATION_TYPE.ERROR,
+      )
+
+      throw new Error(response?.message)
+    }
+  } catch (error) {
+    // Call callback action if provided
+    if (action.onError) {
+      yield action.onError()
+    }
+  }
+}
+
 export default function* watchDashboard() {
   yield takeLatest(WMSX_GET_TRANSFER_REPORT, doGetTransferReport)
   yield takeLatest(WMSX_GET_ITEM_STOCK_REPORT, doGetItemStockReport)
@@ -591,5 +621,9 @@ export default function* watchDashboard() {
   yield takeLatest(
     WMSX_GET_STORAGE_ITEM_NORM_REPORT,
     doGetstorageItemNormReport,
+  )
+  yield takeLatest(
+    WMSX_GET_YIELD_CHART_LIST,
+    doGetYieldChartList,
   )
 }

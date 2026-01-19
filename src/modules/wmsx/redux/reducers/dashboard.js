@@ -11,6 +11,8 @@ import {
   WMSX_GET_SALE_ORDER_EXPORTS_SUCCESS,
   WMSX_GET_ITEM_STOCK_HISTORIES_SUCCESS,
   WMSX_GET_ITEM_CONSTRUCTION_SCL_SUCCESS,
+  WMSX_GET_YIELD_CHART_LIST_SUCCESS,
+  WMSX_GET_YIELD_CHART_LIST_FAILED,
 } from '../actions/dashboard'
 
 const initialState = {
@@ -27,6 +29,7 @@ const initialState = {
   saleOrderExports: {},
   itemStockHistories: [],
   itemStockConstructionScl: [],
+  yieldChartList: []
 }
 
 export default function dashboard(state = initialState, action) {
@@ -90,6 +93,16 @@ export default function dashboard(state = initialState, action) {
       return {
         ...state,
         itemStockConstructionScl: action.payload,
+      }
+    case WMSX_GET_YIELD_CHART_LIST_SUCCESS:
+      return {
+        ...state,
+        yieldChartList: action.payload,
+      }
+    case WMSX_GET_YIELD_CHART_LIST_FAILED:
+      return {
+        ...state,
+        yieldChartList: [],
       }
     default:
       return state
