@@ -209,3 +209,23 @@ Tuỳ phân tích trên, chúng ta có thể rút ra rằng việc phân phối 
   },
 
 ]
+
+export const defectRateData = [
+  { label: '10월', value: 21965 },
+  { label: '11월', value: 27435 },
+  { label: '12월', value: 127918 },
+  { label: '1월', value: 88060 },
+
+  { label: 'W52', value: 191813 },
+  { label: 'W53', value: 120013 },
+  { label: 'W54', value: 124038 },
+  { label: 'W1', value: 135351 },
+
+  { label: '1/2', value: 120753 },
+  { label: '1/3', value: 117039 },
+  { label: '1/4', value: 135645 },
+  { label: '1/5', value: 138123 },
+  { label: '1/6', value: 155277 },
+  { label: '1/7', value: 117099 },
+  { label: '1/8', value: 143089 },
+];
