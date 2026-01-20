@@ -960,4 +960,8 @@ export const ROUTE = {
       TITLE: 'setupJobCreate',
     },
   },
+  REPORT_PPM_TREND: {
+    PATH: '/wmsx/report-ppm-trend',
+    TITLE: 'reportPpmTrend',
+  },
 }

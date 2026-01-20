@@ -146,6 +146,7 @@
     "reportExport": "Xuất báo cáo",
     "defineDepartment": "Quản lý ban",
     "reportStatistics": "Thống kê báo cáo",
+    "reportPpmTrend": "Báo cáo xu hướng PPM",
     "userManagement": "Quản lý người dùng",
     "userPermission": "Phân quyền vai trò người dùng",
     "defineDivision": "Quản lý phòng",
@@ -373,5 +374,22 @@
     "numberBySupplier": "Số item theo nhà cung cấp",
     "totalQuantityVsnumberBySupplier": "Tổng SL & số item theo mã kho",
     "temByWarehouseCode": "Tem phụ tùng & Tem hóa chất theo mã kho"
+  },
+  "reportPPMTrend": {
+    "filterTitle": "Tùy chọn lọc",
+    "periodType": "Loại kỳ",
+    "timeRange": "Khoảng thời gian",
+    "warehouse": "Kho",
+    "vendor": "Nhà cung cấp",
+    "item": "Sản phẩm",
+    "chartTitle": "Báo cáo xu hướng PPM",
+    "viewReport": "Xem báo cáo",
+    "noData": "Không có dữ liệu. Vui lòng chọn bộ lọc và nhấn Xem báo cáo.",
+    "fetchSuccess": "Lấy dữ liệu thành công",
+    "fetchError": "Lỗi khi lấy dữ liệu",
+    "validation": {
+      "periodTypeRequired": "Loại kỳ là bắt buộc",
+      "timeRequired": "Khoảng thời gian là bắt buộc"
+    }
   }
 }
