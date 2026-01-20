@@ -141,12 +141,7 @@ const PPMDataTable = ({ requestProps }) => {
   ];
 
   return (
-    <Page
-      breadcrumbs={breadcrumbs}
-      title={t("menu.ppmDataTable") || "PPM Data Table"}
-      loading={isLoading}
-      fitScreen
-    >
+    <>
       <DataTable
         title={t("ppmDataTable.title")}
         columns={columns}
@@ -159,7 +154,7 @@ const PPMDataTable = ({ requestProps }) => {
         total={total}
         sort={sort}
       />
-    </Page>
+    </>
   );
 };
 

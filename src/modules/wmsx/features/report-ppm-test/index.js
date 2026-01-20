@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { use, useEffect, useMemo, useState } from "react";
 
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import { sub } from "date-fns";
@@ -74,14 +74,11 @@ const ReportPPMTrendTest = () => {
       toDate: moment(selectedDate?.toDate).format("YYYY-MM-DD"),
     };
     actions.getPPMChartList(params);
-    fetchPPMTrendData({
-      time: filters.time,
-    });
   };
 
   useEffect(() => {
     refreshData();
-  }, [page, pageSize, filters, sort, keyword, tab, selectedDate]);
+  }, [page, pageSize, filters, sort, keyword, tab]);
 
   const {
     data: { list: ppmChartList, total },
@@ -132,8 +129,15 @@ const ReportPPMTrendTest = () => {
     }
   };
 
+  useEffect(() => {
+    fetchPPMTrendData({
+      time: filters.time,
+    });
+  }, []);
+
   const onSubmit = async (values) => {
     await fetchPPMTrendData(values);
+    await refreshData();
   };
 
   return (
@@ -168,10 +172,12 @@ const ReportPPMTrendTest = () => {
                       maxDate={new Date()}
                       required
                       onChange={(dateRange) => {
-                        setSelectedDate({
-                          fromDate: dateRange?.[0],
-                          toDate: dateRange?.[1],
-                        });
+                        if (dateRange?.[0] && dateRange?.[1]) {
+                          setSelectedDate({
+                            fromDate: dateRange?.[0],
+                            toDate: dateRange?.[1],
+                          });
+                        }
                       }}
                     />
                   </Grid>
