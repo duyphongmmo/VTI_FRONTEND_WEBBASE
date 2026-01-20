@@ -153,7 +153,7 @@
     "defineSection": "Quản lý bộ phận",
     "roleList": "Quản lý vai trò người dùng",
     "defineRole": "Quản lý vai trò",
-     "reportImportReceipt": "Báo cáo chứng từ phiếu nhập",
+    "reportImportReceipt": "Báo cáo chứng từ phiếu nhập",
     "reportImportDetail": "Báo cáo nhập kho chi tiết",
     "reportImportDefectiveDetail": "Báo cáo chi tiết hàng thiếu thừa hỏng lỗi theo INV",
     "reportExportDetail": "Báo cáo xuất hàng Chi tiết",
@@ -162,10 +162,11 @@
     "reportInventoryByWarehouse": "Báo cáo tồn kho theo kho",
     "reportSummaryByLocation": "Báo cáo tổng hợp theo vị trí",
     "reportDetailSummaryByLocation": "Báo cáo chi tiết tổng hợp theo vị trí",
-     "reportImportExportInventory": "Báo cáo tổng hợp nhập - xuất - tồn theo vị trí",
+    "reportImportExportInventory": "Báo cáo tổng hợp nhập - xuất - tồn theo vị trí",
     "reportImportExportInventoryDetail": "Báo cáo chi tiết nhập - xuất - tồn theo vị trí",
     "reportInventoryDetailByLocation": "Báo cáo chi tiết kiểm kê theo vị trí",
-    "reportGeneralInventory": "Báo cáo kiểm kê tổng hợp"
+    "reportGeneralInventory": "Báo cáo kiểm kê tổng hợp",
+    "reportPpmTrendTest": "Báo cáo xu hướng PPM test"
   },
   "dashboard": {
     "companyPlaceholder": "Chọn công ty",
@@ -310,7 +311,7 @@
       "warehouse": "Kho"
     }
   },
-   "reportExport": {
+  "reportExport": {
     "type": "Loại báo cáo",
     "company": "Công ty",
     "warehouse": "Kho",

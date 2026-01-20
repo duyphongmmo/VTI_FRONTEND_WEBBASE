@@ -19,11 +19,13 @@ import Page from "~/components/Page";
 import { searchUsersApi } from "~/modules/configuration/redux/sagas/user-management/search-users";
 import { ROUTE } from "~/modules/wmsx/routes/config";
 import { api } from "~/services/api";
-import { convertFilterParams } from "~/utils";
+import { convertFilterParams, convertSortParams } from "~/utils";
 import addNotification from "~/utils/toast";
 
 import PPMTrendChart from "../dashboard/components/chart/ppm-trend-chart";
 import { formSchema } from "./schema";
+import PPMDataTable from "../dashboard/components/ppm-data-table";
+import { useDashboardPPMChart } from "../../redux/hooks/useDashboard";
 
 const breadcrumbs = [
   {
@@ -32,11 +34,20 @@ const breadcrumbs = [
   },
 ];
 
-const ReportPPMTrend = () => {
+const ReportPPMTrendTest = () => {
   const { t } = useTranslation(["wmsx"]);
-  const { page, pageSize, sort, filters, keyword, tab, setFilters } =
-    useQueryState();
-
+  const {
+    page,
+    pageSize,
+    sort,
+    filters,
+    keyword,
+    tab,
+    setFilters,
+    setPage,
+    setPageSize,
+    setSort,
+  } = useQueryState();
   const [isLoading, setIsLoading] = useState(false);
   const [chartData, setChartData] = useState([]);
 
@@ -46,6 +57,36 @@ const ReportPPMTrend = () => {
     }),
     [],
   );
+
+  const [selectedDate, setSelectedDate] = useState({
+    fromDate: null,
+    toDate: null,
+  });
+
+  const refreshData = () => {
+    const params = {
+      keyword: keyword.trim(),
+      page,
+      limit: pageSize,
+      filter: convertFilterParams(),
+      sort: convertSortParams(sort),
+      fromDate: moment(selectedDate?.fromDate).format("YYYY-MM-DD"),
+      toDate: moment(selectedDate?.toDate).format("YYYY-MM-DD"),
+    };
+    actions.getPPMChartList(params);
+    fetchPPMTrendData({
+      time: filters.time,
+    });
+  };
+
+  useEffect(() => {
+    refreshData();
+  }, [page, pageSize, filters, sort, keyword, tab, selectedDate]);
+
+  const {
+    data: { list: ppmChartList, total },
+    actions,
+  } = useDashboardPPMChart();
 
   /**
    * Fetch PPM trend data from API
@@ -95,13 +136,6 @@ const ReportPPMTrend = () => {
     await fetchPPMTrendData(values);
   };
 
-  // Load initial data if filters exist
-  useEffect(() => {
-    fetchPPMTrendData({
-      time: filters.time,
-    });
-  }, []);
-
   return (
     <Page
       breadcrumbs={breadcrumbs}
@@ -133,6 +167,12 @@ const ReportPPMTrend = () => {
                       label={t("reportPPMTrend.timeRange") || "Time Range"}
                       maxDate={new Date()}
                       required
+                      onChange={(dateRange) => {
+                        setSelectedDate({
+                          fromDate: dateRange?.[0],
+                          toDate: dateRange?.[1],
+                        });
+                      }}
                     />
                   </Grid>
                   <Grid item lg={3}>
@@ -190,6 +230,27 @@ const ReportPPMTrend = () => {
                 )
               )}
 
+              <Grid container spacing={2}>
+                <Grid item lg={12} md={12} xs={12}>
+                  <PPMDataTable
+                    requestProps={{
+                      ppmChartList,
+                      total,
+                      page,
+                      pageSize,
+                      sort,
+                      filters,
+                      keyword,
+                      tab,
+                      isLoading,
+                      setPage,
+                      setPageSize,
+                      setSort,
+                    }}
+                  />
+                </Grid>
+              </Grid>
+
               {/* Action Bar */}
               <ActionBar
                 onCancel={handleReset}
@@ -207,4 +268,4 @@ const ReportPPMTrend = () => {
   );
 };
 
-export default ReportPPMTrend;
+export default ReportPPMTrendTest;
