@@ -152,8 +152,19 @@ const ReportPPMTrend = () => {
               </Paper>
 
               {/* Chart Section */}
+              
               {chartData && chartData.length > 0 ? (
                 <Box sx={{ mb: 3 }}>
+                <Grid container spacing={2}>
+                {chartData?.map((item) => (
+                  <Grid item xs={12} lg={6} md={12} sx={{ mb: 1.5 }}>
+                    <PPMTrendChart
+                      title={item?.busiName}
+                      data={item?.data}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
                   <PPMTrendChart
                     data={chartData}
                     title={
