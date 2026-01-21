@@ -250,3 +250,18 @@ export const useDashboardPPMChart = () => {
     data,
   };
 };
+export const usePopupChart = () => {
+  const data = useSelector((state) =>
+    get(state, "wmsx.dashboard.popupChartData"),
+  );
+
+  const dispatch = useDispatch();
+  const actions = useMemo(
+    () => bindActionCreators(dashboardActions, dispatch),
+    [dispatch],
+  );
+  return {
+    actions,
+    data,
+  };
+};

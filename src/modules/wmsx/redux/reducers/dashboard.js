@@ -15,6 +15,8 @@ import {
   WMSX_GET_YIELD_CHART_LIST_FAILED,
   WMSX_GET_PPM_CHART_LIST_SUCCESS,
   WMSX_GET_PPM_CHART_LIST_FAILED,
+  GET_DETAIL_CHART_SUCCESS,
+  GET_DETAIL_CHART_FAILED,
 } from "../actions/dashboard";
 
 const initialState = {
@@ -119,6 +121,18 @@ export default function dashboard(state = initialState, action) {
       return {
         ...state,
         ppmChartData: {},
+      };
+    case GET_DETAIL_CHART_SUCCESS:
+      return {
+        ...state,
+        popupChartData: {
+          detail: action?.payload,
+        },
+      };
+    case GET_DETAIL_CHART_FAILED:
+      return {
+        ...state,
+        popupChartData: {},
       };
     default:
       return state;

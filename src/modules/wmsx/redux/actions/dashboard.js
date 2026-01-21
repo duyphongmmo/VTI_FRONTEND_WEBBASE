@@ -70,6 +70,10 @@ export const WMSX_GET_PPM_CHART_LIST_SUCCESS =
   "WMSX_GET_PPM_CHART_LIST_SUCCESS";
 export const WMSX_GET_PPM_CHART_LIST_FAILED = "WMSX_GET_PPM_CHART_LIST_FAILED";
 
+export const GET_DETAIL_CHART = "WMSX_GET_DETAIL_CHART";
+export const GET_DETAIL_CHART_SUCCESS = "WMSX_GET_DETAIL_CHART_SUCCESS";
+export const GET_DETAIL_CHART_FAILED = "WMSX_GET_DETAIL_CHART_FAILED";
+
 export function getPurchasedOrderImports(payload) {
   return {
     type: WMSX_GET_PURCHASED_ORDER_IMPORTS,
@@ -317,6 +321,22 @@ export const getPPMChartListFailed = (payload) => ({
   payload,
 });
 
+export const getPopupChart = (payload, onSuccess, onError) => ({
+  type: GET_DETAIL_CHART,
+  payload,
+  onError,
+  onSuccess,
+});
+
+export const getPopupChartSuccess = (payload) => ({
+  type: GET_DETAIL_CHART_SUCCESS,
+  payload,
+});
+
+export const getPopupChartFailed = (payload) => ({
+  type: GET_DETAIL_CHART_FAILED,
+  payload,
+});
 export default {
   getItemGroupStockSummary,
   setItemGroupStockSummary,
@@ -356,4 +376,7 @@ export default {
   getPPMChartList,
   getPPMChartListSuccess,
   getPPMChartListFailed,
+  getPopupChart,
+  getPopupChartSuccess,
+  getPopupChartFailed,
 };

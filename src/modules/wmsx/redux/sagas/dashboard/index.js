@@ -37,6 +37,8 @@ import {
   WMSX_GET_YIELD_CHART_LIST,
   getPPMChartListSuccess,
   WMSX_GET_PPM_CHART_LIST,
+  getPopupChartSuccess,
+  GET_DETAIL_CHART,
 } from "~/modules/wmsx/redux/actions/dashboard";
 import { api } from "~/services/api";
 import addNotification from "~/utils/toast";
@@ -140,6 +142,11 @@ export const getYieldChartList = (params) => {
 
 export const getPpmChartList = (params) => {
   const uri = `/v1/dashboard/get-list-yield-pagination`;
+  return api.get(uri, params);
+};
+
+export const getPopupChart = (params) => {
+  const uri = `/v1/dashboard/get-detail-yield`;
   return api.get(uri, params);
 };
 
@@ -627,6 +634,30 @@ function* doGetPpmChartList(action) {
   }
 }
 
+function* doGetPopupChart(action) {
+  try {
+    const response = yield call(getPopupChart, action?.payload);
+    if (response?.statusCode === 200) {
+      yield put(getPopupChartSuccess(response?.data?.detail));
+      if (action.onSuccess) {
+        yield action.onSuccess();
+      }
+    } else {
+      addNotification(
+        response?.message || response?.statusText,
+        NOTIFICATION_TYPE.ERROR,
+      );
+
+      throw new Error(response?.message);
+    }
+  } catch (error) {
+    // Call callback action if provided
+    if (action.onError) {
+      yield action.onError();
+    }
+  }
+}
+
 export default function* watchDashboard() {
   yield takeLatest(WMSX_GET_TRANSFER_REPORT, doGetTransferReport);
   yield takeLatest(WMSX_GET_ITEM_STOCK_REPORT, doGetItemStockReport);
@@ -667,4 +698,5 @@ export default function* watchDashboard() {
   );
   yield takeLatest(WMSX_GET_YIELD_CHART_LIST, doGetYieldChartList);
   yield takeLatest(WMSX_GET_PPM_CHART_LIST, doGetPpmChartList);
+  yield takeLatest(GET_DETAIL_CHART, doGetPopupChart);
 }
