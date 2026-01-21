@@ -13,8 +13,92 @@ import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Ca
  *     ppm: number
  *   }
  */
-export default function PPMTrendChart({ data, title }) {
+export default function PPMTrendChart({ data, title, onDotClick }) {
   
+  /**
+   * Handle click event on chart dots
+   * @param {Object} data - Data point that was clicked
+   * @param {Event} event - Click event
+   */
+  function handleDotClick(data, event) {
+    // Ignore clicks on null data points (separators)
+    if (!data || data.ppm === null || !data.periodType) {
+      return
+    }
+
+    // Call parent's callback if provided
+    if (onDotClick && typeof onDotClick === 'function') {
+      onDotClick(data, event)
+    }
+  }
+
+  /**
+   * Custom dot component with click handler
+   */
+  const CustomDot = (props) => {
+    const { cx, cy, payload, r } = props
+    
+    // Don't render dot for null data points
+    if (!payload || payload.ppm === null) {
+      return null
+    }
+
+    return (
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r}
+        fill="#5470C6"
+        stroke="#fff"
+        strokeWidth={2}
+        style={{ cursor: 'pointer' }}
+        onClick={(event) => {
+          event.stopPropagation()
+          handleDotClick(payload, event)
+        }}
+        onMouseEnter={(e) => {
+          const target = e.target
+          target.setAttribute('r', r + 2)
+          target.setAttribute('fill', '#3a5ba0')
+        }}
+        onMouseLeave={(e) => {
+          const target = e.target
+          target.setAttribute('r', r)
+          target.setAttribute('fill', '#5470C6')
+        }}
+      />
+    )
+  }
+
+  /**
+   * Custom active dot component with click handler
+   * This is used when hovering over a dot
+   */
+  const CustomActiveDot = (props) => {
+    const { cx, cy, payload, r = 7 } = props
+    
+    // Don't render dot for null data points
+    if (!payload || payload.ppm === null) {
+      return null
+    }
+
+    return (
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r}
+        fill="#5470C6"
+        stroke="#fff"
+        strokeWidth={2}
+        style={{ cursor: 'pointer' }}
+        onClick={(event) => {
+          event.stopPropagation()
+          handleDotClick(payload, event)
+        }}
+      />
+    )
+  }
+
   /**
    * Format periodKey để hiển thị trên trục X
    * - Q: 25Q2 -> Q2
@@ -235,8 +319,8 @@ export default function PPMTrendChart({ data, title }) {
             dataKey="ppm"
             stroke="#5470C6"
             strokeWidth={2}
-            dot={{ r: 5, fill: '#5470C6', strokeWidth: 2, stroke: '#fff' }}
-            activeDot={{ r: 7, fill: '#5470C6', strokeWidth: 2, stroke: '#fff' }}
+            dot={<CustomDot r={5} />}
+            activeDot={<CustomActiveDot r={7} />}
             connectNulls={false} // QUAN TRỌNG: không nối line qua điểm null
             label={<CustomLabel />}
             name="총합 이탈률"
