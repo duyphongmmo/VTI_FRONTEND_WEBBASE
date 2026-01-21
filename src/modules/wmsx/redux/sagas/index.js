@@ -16,6 +16,5 @@ export default function* sagas() {
     // export report
     watchExportReport(),
     watchListReport(),
-   
   ])
 }

@@ -15,6 +15,7 @@ import {
   WMSX_GET_YIELD_CHART_LIST_FAILED,
   WMSX_GET_PPM_CHART_LIST_SUCCESS,
   WMSX_GET_PPM_CHART_LIST_FAILED,
+  WMSX_GET_PPM_PAGE_OK,
 } from "../actions/dashboard";
 
 const initialState = {
@@ -33,6 +34,7 @@ const initialState = {
   itemStockConstructionScl: [],
   yieldChartList: [],
   ppmChartData: {},
+  ppmPage: {},
 };
 
 export default function dashboard(state = initialState, action) {
@@ -119,6 +121,11 @@ export default function dashboard(state = initialState, action) {
       return {
         ...state,
         ppmChartData: {},
+      };
+    case WMSX_GET_PPM_PAGE_OK:
+      return {
+        ...state,
+        ppmPage: action?.payload,
       };
     default:
       return state;

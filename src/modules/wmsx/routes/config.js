@@ -968,4 +968,8 @@ export const ROUTE = {
     PATH: "/wmsx/report-ppm-test",
     TITLE: "reportPpmTrendTest",
   },
+  REPORT_PPM_TREND_T: {
+    PATH: "/wmsx/report-ppm-t",
+    TITLE: "reportPpmTrendTIen",
+  },
 };

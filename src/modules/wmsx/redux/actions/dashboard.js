@@ -70,6 +70,11 @@ export const WMSX_GET_PPM_CHART_LIST_SUCCESS =
   "WMSX_GET_PPM_CHART_LIST_SUCCESS";
 export const WMSX_GET_PPM_CHART_LIST_FAILED = "WMSX_GET_PPM_CHART_LIST_FAILED";
 
+
+export const WMSX_GET_PPM_PAGE = "WMSX_GET_PPM_PAGE";
+export const WMSX_GET_PPM_PAGE_OK = "WMSX_GET_PPM_PAGE_OK";
+export const WMSX_GET_PPM_PAGE_OK_FAILED = "WMSX_GET_PPM_PAGE_OK_FAILED";
+
 export function getPurchasedOrderImports(payload) {
   return {
     type: WMSX_GET_PURCHASED_ORDER_IMPORTS,
@@ -317,6 +322,18 @@ export const getPPMChartListFailed = (payload) => ({
   payload,
 });
 
+
+export const getPPMPage = (payload) => ({
+  type: WMSX_GET_PPM_PAGE,
+  payload,
+});
+
+
+export const getPPMPageSuccess = (payload) => ({
+  type: WMSX_GET_PPM_PAGE_OK,
+  payload,
+});
+
 export default {
   getItemGroupStockSummary,
   setItemGroupStockSummary,
@@ -356,4 +373,6 @@ export default {
   getPPMChartList,
   getPPMChartListSuccess,
   getPPMChartListFailed,
+  getPPMPage,
+  getPPMPageSuccess
 };

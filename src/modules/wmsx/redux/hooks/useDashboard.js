@@ -245,6 +245,25 @@ export const useDashboardPPMChart = () => {
     () => bindActionCreators(dashboardActions, dispatch),
     [dispatch],
   );
+
+  return {
+    actions,
+    data,
+  };
+};
+
+export const useDashboardPPMPage = () => {
+  const data = useSelector((state) => {
+    // console.log(state)
+    return get(state, "wmsx.dashboard.ppmPage");
+  });
+
+  const dispatch = useDispatch();
+  const actions = useMemo(
+    () => bindActionCreators(dashboardActions, dispatch),
+    [dispatch],
+  );
+
   return {
     actions,
     data,
