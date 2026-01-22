@@ -27,6 +27,7 @@ import {
   FAKE_SELECTED_DATA,
   ITEM_OPTIONS,
 } from "./sample";
+import { fr } from "date-fns/locale";
 
 const breadcrumbs = [
   { route: ROUTE.REPORT_POPUP.PATH, title: ROUTE.REPORT_POPUP.TITLE },
@@ -176,7 +177,33 @@ const ReportQuanlity = () => {
   }, []);
 
   const openDialogWithFakeData = (payload) => {
-    openDialogBadFunc(FAKE_SELECTED_DATA);
+    openDialogBadFunc(payload);
+  };
+
+  const getDetailData = async (payload) => {
+    setDialogOpen(true);
+    setSelectedData(payload);
+    setIsLoadingDetail(true);
+    setDetailData(null);
+
+    const params = {
+      model: payload.model,
+      fromDate: "2026-01-01",
+      toDate: "2026-01-03",
+    };
+
+    const res = await api.get("/v1/dashboard/get-bad-by-name", params);
+    if (res?.statusCode === 200) {
+      setDetailData(res?.data);
+    } else {
+      setDetailData(null);
+    }
+
+    setIsLoadingDetail(false);
+  };
+
+  const openDialogDetail = async (payload) => {
+    await getDetailData(payload);
   };
 
   /* =========================
@@ -255,7 +282,7 @@ const ReportQuanlity = () => {
               <Grid item lg={6} md={12} xs={12}>
                 <BadModelPareto
                   chartDataBad={badModelData}
-                  handleBarClick={openDialogWithFakeData}
+                  handleBarClick={openDialogDetail}
                 />
               </Grid>
               <Grid item lg={6} md={12} xs={12}>

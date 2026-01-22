@@ -129,12 +129,12 @@ const BadModelPareto = ({
             dataKey="badQty"
             barSize={22}
             fill={COLOR_BAR}
-            // onClick={(data, index, event) => {
-            //   console.log("Bar clicked:", data);
-            //   if (handleBarClick) {
-            //     handleBarClick(data.payload);
-            //   }
-            // }}
+            onClick={(data, index, event) => {
+              console.log("Bar clicked:", data);
+              if (handleBarClick) {
+                handleBarClick(data.payload);
+              }
+            }}
           />
 
           {/* <Line

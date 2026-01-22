@@ -134,6 +134,7 @@ export default function dashboard(state = initialState, action) {
         ...state,
         popupChartData: {},
       };
+
     default:
       return state;
   }

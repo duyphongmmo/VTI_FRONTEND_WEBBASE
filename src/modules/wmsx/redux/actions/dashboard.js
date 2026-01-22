@@ -337,6 +337,7 @@ export const getPopupChartFailed = (payload) => ({
   type: GET_DETAIL_CHART_FAILED,
   payload,
 });
+
 export default {
   getItemGroupStockSummary,
   setItemGroupStockSummary,

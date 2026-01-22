@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Grid,
@@ -13,6 +13,7 @@ import {
 
 import Button from "~/components/Button"; // nếu bạn đang dùng Button custom
 import ReportPPMTrendDetail from "../../../report-ppm-trend/detail";
+import { api } from "~/services/api";
 // hoặc nếu muốn dùng MUI Button: import { Button } from "@mui/material";
 
 const DialogBad = ({
@@ -25,6 +26,30 @@ const DialogBad = ({
   maxWidth = "md",
   fullWidth = true,
 }) => {
+  const [selectedKey, setSelectedKey] = useState(null);
+  const [detailDataRow, setDetailDataRow] = useState([]);
+
+  const handleSelectItem = async (item) => {
+    const key = item.badName || item.label;
+    setSelectedKey(key);
+
+    const params = {
+      id: item.badName,
+    };
+    // gọi API detail theo item
+    const res = await api.get(`/v1/dashboard/get-bad-category`, params);
+    console.log("API detail response:", res);
+    if (res.statusCode === 200) {
+      setDetailDataRow(res.data?.items || []);
+    } else {
+      setDetailDataRow([]);
+    }
+
+    // demo: set detailItems
+  };
+
+  console.log("detailData", detailData);
+
   return (
     <Dialog
       open={open}
@@ -40,7 +65,7 @@ const DialogBad = ({
 
       <DialogContent dividers>
         {/* Selected Data Info */}
-        {selectedData && (
+        {/* {selectedData && (
           <Box sx={{ mb: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={6} sm={4}>
@@ -76,9 +101,9 @@ const DialogBad = ({
               </Grid>
             </Grid>
           </Box>
-        )}
+        )} */}
 
-        <Divider sx={{ mb: 2 }} />
+        {/* <Divider sx={{ mb: 2 }} /> */}
 
         {/* Detail Data */}
         {isLoadingDetail ? (
@@ -86,7 +111,13 @@ const DialogBad = ({
             <CircularProgress />
           </Box>
         ) : detailData ? (
-          <ReportPPMTrendDetail detailData={detailData} t={t} />
+          <ReportPPMTrendDetail
+            detailData={detailData}
+            t={t}
+            onSelectItem={handleSelectItem}
+            selectedKey={selectedKey}
+            detailDataRow={detailDataRow}
+          />
         ) : (
           <Box sx={{ py: 4, textAlign: "center" }}>
             <Typography variant="body2" color="text.secondary">

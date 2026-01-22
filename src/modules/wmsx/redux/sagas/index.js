@@ -1,9 +1,9 @@
-import { all } from 'redux-saga/effects'
+import { all } from "redux-saga/effects";
 
-
-import watchDashboard from './dashboard'
-import watchExportReport from './report-export/export-report'
-import watchListReport from './report-export/list-report'
+import watchDashboard from "./dashboard";
+import watchExportReport from "./report-export/export-report";
+import watchListReport from "./report-export/list-report";
+import watchBadProc from "./bad-proc";
 
 /**
  * Root saga
@@ -12,10 +12,10 @@ export default function* sagas() {
   yield all([
     // Dashboard
     watchDashboard(),
-    
+
     // export report
     watchExportReport(),
     watchListReport(),
-   
-  ])
+    watchBadProc(),
+  ]);
 }
