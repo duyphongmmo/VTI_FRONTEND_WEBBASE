@@ -13,12 +13,36 @@ import {
 } from "recharts";
 
 export default function ProcessQualityChart({ rawData }) {
+  // Hook #1: normalize input (luôn chạy)
   const safeData = useMemo(
     () => (Array.isArray(rawData) ? rawData : []),
     [rawData],
   );
 
-  if (safeData.length === 0) {
+  // Hook #2: normalize numeric fields (luôn chạy)
+  const data = useMemo(
+    () =>
+      safeData.map((it) => ({
+        ...it,
+        goodQty: Number(it.goodQty ?? 0),
+        badQty: Number(it.badQty ?? 0),
+        ppm: Number(it.ppm ?? 0),
+      })),
+    [safeData],
+  );
+
+  // Hook #3: compute domains (luôn chạy)
+  const { barMax, ppmMin, ppmMax } = useMemo(() => {
+    if (data.length === 0) return { barMax: 0, ppmMin: 0, ppmMax: 0 };
+
+    const bMax = Math.max(...data.map((d) => d.goodQty + d.badQty), 0);
+    const pMin = Math.min(...data.map((d) => d.ppm), 0);
+    const pMax = Math.max(...data.map((d) => d.ppm), 0);
+    return { barMax: bMax, ppmMin: pMin, ppmMax: pMax };
+  }, [data]);
+
+  // ✅ Sau khi gọi hết hook rồi mới return empty
+  if (data.length === 0) {
     return (
       <Box
         sx={{
@@ -38,37 +62,16 @@ export default function ProcessQualityChart({ rawData }) {
     );
   }
 
-  // normalize numeric fields to avoid NaN
-  const data = useMemo(
-    () =>
-      safeData.map((it) => ({
-        ...it,
-        goodQty: Number(it.goodQty ?? 0),
-        badQty: Number(it.badQty ?? 0),
-        remainQty: Number(it.ppm ?? 0),
-      })),
-    [safeData],
-  );
-
-  // domains for nicer padding
-  const { barMax, remainMin, remainMax } = useMemo(() => {
-    const barMaxVal = Math.max(...data.map((d) => d.goodQty + d.badQty), 0);
-    const rMin = Math.min(...data.map((d) => d.remainQty), 0);
-    const rMax = Math.max(...data.map((d) => d.remainQty), 0);
-    return { barMax: barMaxVal, remainMin: rMin, remainMax: rMax };
-  }, [data]);
-
   const CustomTooltip = ({ active, payload, label }) => {
     if (!active || !payload?.length) return null;
     const p = payload[0]?.payload;
-
     return (
       <Box
         sx={{
           backgroundColor: "white",
           border: "1px solid #ccc",
           borderRadius: 1,
-          padding: 1.5,
+          p: 1.5,
           boxShadow: 2,
         }}
       >
@@ -76,13 +79,13 @@ export default function ProcessQualityChart({ rawData }) {
           {label}
         </Typography>
         <Typography variant="body2" sx={{ fontWeight: 600 }}>
-          Good Qty: {p?.goodQty?.toLocaleString()}
+          Good Qty: {p.goodQty.toLocaleString()}
         </Typography>
         <Typography variant="body2" sx={{ fontWeight: 600 }}>
-          Bad Qty: {p?.badQty?.toLocaleString()}
+          Bad Qty: {p.badQty.toLocaleString()}
         </Typography>
         <Typography variant="body2" sx={{ fontWeight: 600, mt: 0.5 }}>
-          Remain Qty: {p?.remainQty?.toLocaleString()}
+          PPM: {p.ppm.toLocaleString()}
         </Typography>
       </Box>
     );
@@ -100,7 +103,7 @@ export default function ProcessQualityChart({ rawData }) {
       <ResponsiveContainer width="100%" height={500}>
         <ComposedChart
           data={data}
-          margin={{ top: 20, right: 40, left: 20, bottom: 100 }}
+          margin={{ top: 20, right: 40, left: 20, bottom: 110 }}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
 
@@ -108,57 +111,55 @@ export default function ProcessQualityChart({ rawData }) {
             dataKey="procName"
             angle={-45}
             textAnchor="end"
-            height={120}
+            height={130}
             tick={{ fontSize: 11 }}
             interval={0}
           />
 
-          {/* Y axis for Bars (Good/Bad) */}
+          {/* Bars axis */}
           <YAxis
-            yAxisId="bar"
+            yAxisId="qty"
             tick={{ fontSize: 12 }}
             tickFormatter={(v) => Number(v).toLocaleString()}
             domain={[0, Math.ceil(barMax * 1.15)]}
           />
 
-          {/* Y axis for Line (RemainQty) */}
+          {/* PPM axis */}
           <YAxis
-            yAxisId="remain"
+            yAxisId="ppm"
             orientation="right"
             tick={{ fontSize: 12 }}
             tickFormatter={(v) => Number(v).toLocaleString()}
-            domain={[Math.floor(remainMin * 0.95), Math.ceil(remainMax * 1.05)]}
+            domain={[Math.floor(ppmMin * 0.95), Math.ceil(ppmMax * 1.05)]}
           />
 
           <Tooltip content={<CustomTooltip />} />
           <Legend wrapperStyle={{ paddingTop: "10px" }} iconType="rect" />
 
-          {/* Stacked Bars use left axis */}
           <Bar
-            yAxisId="bar"
+            yAxisId="qty"
             dataKey="goodQty"
             stackId="a"
             fill="#82ca9d"
             name="Good Qty"
           />
           <Bar
-            yAxisId="bar"
+            yAxisId="qty"
             dataKey="badQty"
             stackId="a"
             fill="#ff6b6b"
             name="Bad Qty"
           />
 
-          {/* Line uses right axis, value is REAL remainQty */}
           <Line
-            yAxisId="remain"
+            yAxisId="ppm"
             type="monotone"
-            dataKey="remainQty"
+            dataKey="ppm"
             stroke="#8884d8"
             strokeWidth={3}
             dot={{ fill: "#8884d8", r: 4 }}
             activeDot={{ r: 6 }}
-            name="Remain Qty"
+            name="PPM"
           />
         </ComposedChart>
       </ResponsiveContainer>

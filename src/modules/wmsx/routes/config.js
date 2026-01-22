@@ -973,4 +973,8 @@ export const ROUTE = {
     PATH: "/wmsx/report-popup",
     TITLE: "reportPopup",
   },
+  REPORT_QUANLITY_STATUS: {
+    PATH: "/wmsx/report-quality",
+    TITLE: "reportQuanlity",
+  },
 };

@@ -2,6 +2,7 @@ import popupChart from "../features/popup-chart";
 import ReportExport from "../features/report-export";
 import ReportPPMTrendTest from "../features/report-ppm-test";
 import ReportPPMTrend from "../features/report-ppm-trend";
+import ReportQuanlity from "../features/report-quanlity";
 import { ROUTE } from "./config";
 
 const routes = [
@@ -26,10 +27,17 @@ const routes = [
   //   icon: "report",
   //   isInSidebar: true,
   // },
+  // {
+  //   path: ROUTE.REPORT_POPUP.PATH,
+  //   name: ROUTE.REPORT_POPUP.TITLE,
+  //   component: popupChart,
+  //   icon: "report",
+  //   isInSidebar: true,
+  // },
   {
-    path: ROUTE.REPORT_POPUP.PATH,
-    name: ROUTE.REPORT_POPUP.TITLE,
-    component: popupChart,
+    path: ROUTE.REPORT_QUANLITY_STATUS.PATH,
+    name: ROUTE.REPORT_QUANLITY_STATUS.TITLE,
+    component: ReportQuanlity,
     icon: "report",
     isInSidebar: true,
   },

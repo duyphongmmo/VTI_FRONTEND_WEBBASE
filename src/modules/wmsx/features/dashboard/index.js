@@ -45,7 +45,6 @@ function Dashboard() {
   useEffect(() => {
     actions.getYieldChartList();
   }, []);
-
   const [selectedDate, setSelectedDate] = useState(initialDate);
   const groupOptions = [
     {
